@@ -1,0 +1,32 @@
+=======GIAO DIỆN=======
+- Người dùng
+  + Trang Chủ
+  + Danh Mục Sản Phẩm
+  + Chi Tiết Sản Phẩm
+  + Giỏ Hàng
+  + Thanh Toán
+  + Thanh Toán Thành Công
+  + Liên Hệ
+- Admin/User:
+  + Trang Đăng Nhập
+  + Trang Quản Lý
+=======CHỨC NĂNG=======
+- Admin:
+  + Đăng nhập
+  + Quản lý nhân viên
+  + Quản lý danh mục sản phẩm
+  + Quản lý sản phẩm
+  + Quản lý đơn hàng
+  + Quản Lý Doanh Thu
+- Nhân viên:
+  + Đăng nhập
+  + Quản lý danh mục sản phẩm
+  + Quản lý sản phẩm
+  + Quản lý đơn hàng
+  + Quản Lý Doanh Thu
+- Người dùng:
+  + Xem sản phẩm
+  + Quản lý giỏ hàng
+  + Thanh toán
+  + Liên hệ
+

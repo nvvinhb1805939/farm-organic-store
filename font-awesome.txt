@@ -1,0 +1,7 @@
+<i class="fas fa-map-marker-alt"></i> -> location
+<i class="fas fa-phone-alt"></i> -> call
+<i class="fas fa-envelope"></i> -> envelope 
+<i class="far fa-search"></i> -> search
+<i class="far fa-shopping-cart"></i> -> cart 
+<i class="far fa-angle-left"></i> -> left
+<i class="far fa-angle-right"></i> -> right
