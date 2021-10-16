@@ -22,7 +22,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   scroll-behavior: smooth;
 }
 html {
@@ -46,6 +46,7 @@ a {
 button {
   display: inline-block;
   border: none;
+  background: none;
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -63,6 +64,7 @@ img {
   display: flex;
 }
 .container {
-  max-width: 1170px;
+  max-width: 1200px;
+  padding: 0 var(--left-right);
   margin: 0 auto;
 }
