@@ -3,7 +3,7 @@
   margin-top: 7.4rem;
   text-align: center;
   color: var(--white);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .slider-item {
   flex: 0 0 100%;

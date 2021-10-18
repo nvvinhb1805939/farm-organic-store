@@ -11,11 +11,9 @@
   <body>
     <header class="header">
       <div class="header__container container flex">
-        <div class="header__logo">
-          <a href="#" class="header-link">
-            <img src="./assets/img/logo.png" alt="" class="header-link__img">
-          </a>
-        </div>
+        <a href="#" class="logo">
+          <img src="./assets/img/logo.png" alt="" class="logo__img">
+        </a>
         <nav class="header-nav">
           <a href="#" class="header-nav__link active">Trang Chủ</a>
           <a href="#" class="header-nav__link">Sản Phẩm</a>
@@ -129,8 +127,166 @@
         <i class="far fa-angle-right slider__icon"></i>
       </button>
     </section>
-    <section class="product"></section>
-    <footer class="footer"></footer>
+    <section class="product container">
+      <div class="product-header">
+        <h4 class="product__subheading heading-4">Hàng Mới Nhất</h4>
+        <h2 class="product__heading">Sản Phẩm Mới</h2>
+      </div>
+      <div class="product-list grid">
+        <div class="product-item flex">
+          <span class="product__label product__label--sale">Sale</span>
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img">
+          <div class="product-content">
+            <h5 class="product__name">Chuối</h5>
+            <div class="product-price__container">
+              <span class="product__price--old">20.000</span>
+              <span class="product__price--new">15.000</span>
+            </div>
+          </div>
+          <a href="#" class="product-btn">
+            <i class="far fa-search product__icon search"></i>
+          </a>
+        </div>
+        <div class="product-item flex">
+          <span class="product__label product__label--new">New</span>
+          <img src="./assets/img/product_bread.png" alt="img" class="product__img">
+          <div class="product-content">
+            <h5 class="product__name">Chuối</h5>
+            <div class="product-price__container">
+              <span class="product__price--old">20.000</span>
+              <span class="product__price--new">15.000</span>
+            </div>
+          </div>
+          <a href="#" class="product-btn">
+            <i class="far fa-search product__icon search"></i>
+          </a>
+        </div>
+        <div class="product-item flex">
+          <span class="product__label product__label--sale">Sale</span>
+          <img src="./assets/img/product_bread.png" alt="img" class="product__img">
+          <div class="product-content">
+            <h5 class="product__name">Chuối</h5>
+            <div class="product-price__container">
+              <span class="product__price--old">20.000</span>
+              <span class="product__price--new">15.000</span>
+            </div>
+          </div>
+          <a href="#" class="product-btn">
+            <i class="far fa-search product__icon search"></i>
+          </a>
+        </div>
+        <div class="product-item flex">
+          <span class="product__label product__label--sale">Sale</span>
+          <img src="./assets/img/product_bread.png" alt="img" class="product__img">
+          <div class="product-content">
+            <h5 class="product__name">Chuối</h5>
+            <div class="product-price__container">
+              <span class="product__price--old">20.000</span>
+              <span class="product__price--new">15.000</span>
+            </div>
+          </div>
+          <a href="#" class="product-btn">
+            <i class="far fa-search product__icon search"></i>
+          </a>
+        </div>
+        <div class="product-item flex">
+          <span class="product__label product__label--sale">Sale</span>
+          <img src="./assets/img/product_bread.png" alt="img" class="product__img">
+          <div class="product-content">
+            <h5 class="product__name">Chuối</h5>
+            <div class="product-price__container">
+              <span class="product__price--old">20.000</span>
+              <span class="product__price--new">15.000</span>
+            </div>
+          </div>
+          <a href="#" class="product-btn">
+            <i class="far fa-search product__icon search"></i>
+          </a>
+        </div>
+        <div class="product-item flex">
+          <span class="product__label product__label--sale">Sale</span>
+          <img src="./assets/img/product_bread.png" alt="img" class="product__img">
+          <div class="product-content">
+            <h5 class="product__name">Chuối</h5>
+            <div class="product-price__container">
+              <span class="product__price--old">20.000</span>
+              <span class="product__price--new">15.000</span>
+            </div>
+          </div>
+          <a href="#" class="product-btn">
+            <i class="far fa-search product__icon search"></i>
+          </a>
+        </div>
+        <div class="product-item flex">
+          <span class="product__label product__label--sale">Sale</span>
+          <img src="./assets/img/product_bread.png" alt="img" class="product__img">
+          <div class="product-content">
+            <h5 class="product__name">Chuối</h5>
+            <div class="product-price__container">
+              <span class="product__price--old">20.000</span>
+              <span class="product__price--new">15.000</span>
+            </div>
+          </div>
+          <a href="#" class="product-btn">
+            <i class="far fa-search product__icon search"></i>
+          </a>
+        </div>
+        <div class="product-item flex">
+          <span class="product__label product__label--sale">Sale</span>
+          <img src="./assets/img/product_bread.png" alt="img" class="product__img">
+          <div class="product-content">
+            <h5 class="product__name">Chuối</h5>
+            <div class="product-price__container">
+              <span class="product__price--old">20.000</span>
+              <span class="product__price--new">15.000</span>
+            </div>
+          </div>
+          <a href="#" class="product-btn">
+            <i class="far fa-search product__icon search"></i>
+          </a>
+        </div>
+      </div>
+      <a href="#" class="product-link">
+        Xem Thêm
+        <i class="far fa-angle-right product__icon more"></i>
+      </a>
+    </section>
+    <footer class="footer">
+      <div class="footer-top container grid">
+        <div class="footer-schedule">
+          <a href="#" class="logo">
+            <img class="" src="./assets/img/logo.png" alt="logo__img">
+          </a>
+          <div class="footer-time">
+            <p class="footer-date">Thứ Hai - Thứ Sáu: 08:00am - 08:00pm</p>
+            <p class="footer-date">Ngày Cuối Tuần: 10:00am - 06:00pm</p>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer__heading">Liên Hệ</h4>
+          <ul class="footer-list">
+            <li class="footer-item">
+              <i class="fas fa-map-marker-alt footer__icon"></i>
+              3/2, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam
+            </li>
+            <li class="footer-item">
+              <i class="fas fa-phone-alt footer__icon"></i>
+              <a href="tel:0123 456 789" class="footer__link">0123 456 789</a>
+            </li>
+            <li class="footer-item">
+              <i class="fas fa-envelope footer__icon"></i>
+              <a href="mailto:farmorganicstore@gmail.com.vn" class="footer__link">farmorganicstore@gmail.com.vn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer__copyright">© 2021 Farm.  All rights reserved.</p>
+      </div>
+    </footer>
+    <a href="#" class="scroll-btn">
+      <i class="fal fa-arrow-up scroll__icon"></i>
+    </a>
 
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/slider.js"></script>

@@ -12,9 +12,6 @@
 .header__container {
   justify-content: space-between;
 }
-.header__logo {
-  width: 14rem;
-}
 .header-nav__link {
   text-transform: uppercase;
   font-weight: 600;

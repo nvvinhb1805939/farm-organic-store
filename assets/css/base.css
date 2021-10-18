@@ -28,6 +28,10 @@
   transition: all 0.2s linear;
   scroll-behavior: smooth;
 }
+::selection {
+  background-color: var(--green);
+  color: var(--white);
+}
 html {
   font-family: var(--primary-font);
   font-size: 62.5%;
@@ -59,6 +63,9 @@ img {
   display: inline-block;
   max-width: 100%;
 }
+i {
+  transition: none;
+}
 /* ======================COMMON CLASSES======================*/
 .grid {
   display: grid;
@@ -72,10 +79,26 @@ img {
   padding: 0 var(--left-right);
   margin: 0 auto;
 }
+.logo {
+  width: 14rem;
+}
 .heading-4 {
   font-family: var(--second-font);
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.05em;
+}
+.scroll-btn {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  padding: 1.6rem 1.9rem;
+  border-radius: 50%;
+  background-color: var(--green);
+  color: var(--white);
+  opacity: 0.5;
+}
+.scroll-btn:hover {
+  opacity: 1;
 }
