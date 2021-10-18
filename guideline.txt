@@ -1,9 +1,12 @@
 =======GIAO DIỆN=======
 - Người dùng
-  + Trang Chủ
+  + Trang Chủ                ...
   + Danh Mục Sản Phẩm
   + Chi Tiết Sản Phẩm
+  + Kết quả tìm kiếm
   + Giỏ Hàng
+    . Khi giỏ hành rỗng -> set alternative img
+    . Định dạng tiền (1000 -> 1.000)
   + Thanh Toán
   + Thanh Toán Thành Công
   + Liên Hệ

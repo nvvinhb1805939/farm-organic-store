@@ -7,9 +7,12 @@
   --second-font:: 'Kalam', cursive;
 
   --green: #5c9155;
+  --white: #fff;
   --black: #151515;
   --yellow: #e9da5d;
   --gray: #9b9b9b;
+  --light-gray: #eee;
+  --shadow: rgba(0, 0, 0, 0.05);
 
   --top-bottom: 11rem;
   --left-right: 1.5rem;
@@ -55,13 +58,16 @@ img {
   display: inline-block;
   max-width: 100%;
 }
-
+i {
+  color: inherit;
+}
 /* ======================COMMON CLASSES======================*/
 .grid {
   display: grid;
 }
 .flex {
   display: flex;
+  align-items: center;
 }
 .container {
   max-width: 1200px;
