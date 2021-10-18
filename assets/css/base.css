@@ -4,7 +4,7 @@
 /* ======================VARIABLES======================*/
 :root {
   --primary-font: 'Be Vietnam Pro', sans-serif;
-  --second-font:: 'Kalam', cursive;
+  --second-font: 'Kalam', cursive;
 
   --green: #5c9155;
   --white: #fff;
@@ -50,6 +50,7 @@ button {
   display: inline-block;
   border: none;
   background: none;
+  color: inherit;
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -57,9 +58,6 @@ button {
 img {
   display: inline-block;
   max-width: 100%;
-}
-i {
-  color: inherit;
 }
 /* ======================COMMON CLASSES======================*/
 .grid {
@@ -73,4 +71,11 @@ i {
   max-width: 1200px;
   padding: 0 var(--left-right);
   margin: 0 auto;
+}
+.heading-4 {
+  font-family: var(--second-font);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
 }

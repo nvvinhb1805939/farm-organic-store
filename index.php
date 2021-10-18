@@ -17,7 +17,7 @@
           </a>
         </div>
         <nav class="header-nav">
-          <a href="#" class="header-nav__link">Trang Chủ</a>
+          <a href="#" class="header-nav__link active">Trang Chủ</a>
           <a href="#" class="header-nav__link">Sản Phẩm</a>
           <a href="#" class="header-nav__link">Liên Hệ</a>
         </nav>
@@ -97,12 +97,42 @@
         </div>
       </div>
     </header>
-    <main class="main">
-      <section class="slider"></section>
-      <section class="product"></section>
-    </main>
+    <section class="slider flex">
+      <div class="slider-item" style="background-image: url('./assets/img/slider1.jpg');">
+        <div class="slider-header">
+          <h4 class="slider__subheading heading-4">Chào mừng đến với Farm Organic Store</h4>
+          <h1 class="slider__heading">Sản Phẩm</h1>
+          <h3 class="slider__slogan">Tăng Trưởng Gắn Liền Với Tình Yêu</h3>
+        </div>
+        <a href="#" class="slider__link">Mua Ngay</a>
+      </div>
+      <div class="slider-item" style="background-image: url('./assets/img/slider2.jpg');">
+        <div class="slider-header">
+          <h4 class="slider__subheading heading-4">Sản phẩm hữu cơ chất lượng cao</h4>
+          <h1 class="slider__heading">Rau Củ</h1>
+          <h3 class="slider__slogan">Không Chất Phụ Gia Có Hại</h3>
+        </div>
+        <a href="#" class="slider__link">Mua Ngay</a>
+      </div>
+      <div class="slider-item" style="background-image: url('./assets/img/slider3.jpg');">
+        <div class="slider-header">
+          <h4 class="slider__subheading heading-4">Sản phẩm hữu cơ tươi</h4>
+          <h1 class="slider__heading">Trái Cây</h1>
+          <h3 class="slider__slogan">Với Nhiều Vitamin</h3>
+        </div>
+        <a href="#" class="slider__link">Mua Ngay</a>
+      </div>
+      <button class="slider-btn slider-btn--prev disable">
+        <i class="far fa-angle-left slider__icon"></i>
+      </button>
+      <button class="slider-btn slider-btn--next">
+        <i class="far fa-angle-right slider__icon"></i>
+      </button>
+    </section>
+    <section class="product"></section>
     <footer class="footer"></footer>
 
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/slider.js"></script>
   </body>
 </html>

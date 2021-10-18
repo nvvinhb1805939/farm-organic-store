@@ -1,4 +1,7 @@
-const cart = document.querySelector(".header-cart"),
+/*==============================VARIABLES==============================*/
+/*-------------Header-------------*/
+const header = document.querySelector(".header"),
+  cart = document.querySelector(".header-cart"),
   cartIcon = document.querySelector(".header__icon.cart"),
   cartWrapper = document.querySelector(".header-cart__wrapper"),
   amountLabel = document.querySelector(".header-cart__amount"),
@@ -8,10 +11,10 @@ const cart = document.querySelector(".header-cart"),
   descreaseBtns = document.querySelectorAll(".header-cart__btn.decrease"),
   increaseBtns = document.querySelectorAll(".header-cart__btn.increase"),
   priceLabels = document.querySelectorAll(".header-cart__price");
-
 let amountItems = items.length;
 
-/*==============================Toggle Cart Wrapper==============================*/
+/*==============================EVENT LISTENERS & FUNCTIONS==============================*/
+/*-------------Toggle Cart Wrapper-------------*/
 cart.onclick = e => {
   e.stopPropagation();
 };
@@ -21,8 +24,7 @@ cartIcon.onclick = e => {
 window.onclick = () => {
   cartWrapper.classList.remove("show");
 };
-
-/*==============================Handle Quantity Items==============================*/
+/*-------------Handle Quantity Items-------------*/
 descreaseBtns.forEach((descreaseBtn, index) => {
   descreaseBtn.onclick = () => {
     handleQuantityItems(index, false);
@@ -33,7 +35,6 @@ increaseBtns.forEach((increaseBtn, index) => {
     handleQuantityItems(index, true);
   };
 });
-
 function handleQuantityItems(index, isIncrease) {
   let quantityItem = Number(quantityItems[index].innerText);
   let price = Number(priceLabels[index].innerText);
