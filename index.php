@@ -284,7 +284,7 @@
         <p class="footer__copyright">© 2021 Farm.  All rights reserved.</p>
       </div>
     </footer>
-    <a href="#" class="scroll-btn">
+    <a href="#" class="scroll-btn appear">
       <i class="fal fa-arrow-up scroll__icon"></i>
     </a>
 

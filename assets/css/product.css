@@ -1,5 +1,6 @@
 .product {
-  padding: var(--top-bottom) 0;
+  padding-top: var(--top-bottom);
+  padding-bottom: var(--top-bottom);
   text-align: center;
 }
 .product__subheading {

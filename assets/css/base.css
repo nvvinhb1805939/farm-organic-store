@@ -76,7 +76,8 @@ i {
 }
 .container {
   max-width: 1200px;
-  padding: 0 var(--left-right);
+  padding-left: var(--left-right);
+  padding-right: var(--left-right);
   margin: 0 auto;
 }
 .logo {
@@ -90,15 +91,19 @@ i {
   letter-spacing: 0.05em;
 }
 .scroll-btn {
+  --distance: 4rem;
   position: fixed;
-  bottom: 4rem;
-  right: 4rem;
+  bottom: var(--distance);
+  right: var(--distance);
   padding: 1.6rem 1.9rem;
   border-radius: 50%;
   background-color: var(--green);
   color: var(--white);
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .scroll-btn:hover {
   opacity: 1;
+}
+.scroll-btn.appear {
+  transform: translateY(calc(var(--distance) + 100%));
 }

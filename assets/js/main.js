@@ -12,6 +12,8 @@ const header = document.querySelector(".header"),
   increaseBtns = document.querySelectorAll(".header-cart__btn.increase"),
   priceLabels = document.querySelectorAll(".header-cart__price");
 let amountItems = items.length;
+/*-------------Scroll Btn-------------*/
+const scrollBtn = document.querySelector('.scroll-btn');
 
 /*==============================EVENT LISTENERS & FUNCTIONS==============================*/
 /*-------------Toggle Cart Wrapper-------------*/
@@ -67,3 +69,11 @@ function getTotalPrice() {
   });
   return price;
 }
+/*-------------Toggle Scroll Btn When Scroll Page-------------*/
+document.onscroll = () => {
+  if(window.scrollY >= 500) {
+    scrollBtn.classList.remove('appear');
+  } else {
+    scrollBtn.classList.add('appear');
+  }
+};

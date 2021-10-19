@@ -5,7 +5,8 @@
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 1fr;
   grid-column-gap: 3rem;
-  padding: var(--top-bottom) 0;
+  padding-top: var(--top-bottom);
+  padding-bottom: var(--top-bottom);
 }
 .footer-time {
   margin-top: 3rem;
