@@ -1,11 +1,10 @@
 .slider {
   position: relative;
-  margin-top: 7.4rem;
   text-align: center;
   color: var(--white);
   overflow: hidden;
 }
-.slider-item {
+.slider__item {
   flex: 0 0 100%;
   padding: 8rem 0;
   background-position: center;
@@ -44,7 +43,7 @@
   background-color: var(--green);
   color: var(--white);
 }
-.slider-btn {
+.slider__btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -54,16 +53,16 @@
   border-radius: 50%;
   transition: 0;
 }
-.slider-btn:hover {
+.slider__btn:hover {
   color: var(--green);
 }
-.slider-btn.disable {
+.slider__btn.disable {
   opacity: 0.6;
   pointer-events: none;
 }
-.slider-btn--prev {
+.slider__btn--prev {
   left: 0;
 }
-.slider-btn--next {
+.slider__btn--next {
   right: 0;
 }

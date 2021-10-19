@@ -38,13 +38,14 @@
                 </h5>
                 <h6 class="header-cart__h6">
                   Tổng Cộng: 
-                  <span class="header-cart__total">45000</span></h6>
+                  <span class="header-cart__total">45000</span>
+                </h6>
               </div>
               <ul class="heeader-cart__list">
                 <li class="header-cart__item flex" data-price="30000">
                   <div class="header-cart__left">
-                    <a href="#" class="header-cart__link">
-                      <img src="./assets/img/product_orange.png" alt="img" class="header-cart__img">
+                    <a href="#" class="img-link">
+                      <img src="./assets/img/product_orange.png" alt="img" class="img-link__img">
                     </a>
                   </div>
                   <div class="header-cart__right">
@@ -65,8 +66,8 @@
                 </li>
                 <li class="header-cart__item flex" data-price="15000">
                   <div class="header-cart__left">
-                    <a href="#" class="header-cart__link">
-                      <img src="./assets/img/product_banana--mini.png" alt="img" class="header-cart__img">
+                    <a href="#" class="img-link">
+                      <img src="./assets/img/product_banana--mini.png" alt="img" class="img-link__img">
                     </a>
                   </div>
                   <div class="header-cart__right">
@@ -95,192 +96,192 @@
         </div>
       </div>
     </header>
-    <section class="slider flex">
-      <div class="slider-item" style="background-image: url('./assets/img/slider1.jpg');">
-        <div class="slider-header">
+    <section class="slider mt-header flex">
+      <div class="slider__item" style="background-image: url('./assets/img/slider1.jpg');">
+        <div class="slider__header">
           <h4 class="slider__subheading heading-4">Chào mừng đến với Farm Organic Store</h4>
           <h1 class="slider__heading">Sản Phẩm</h1>
           <h3 class="slider__slogan">Tăng Trưởng Gắn Liền Với Tình Yêu</h3>
         </div>
         <a href="#" class="slider__link">Mua Ngay</a>
       </div>
-      <div class="slider-item" style="background-image: url('./assets/img/slider2.jpg');">
-        <div class="slider-header">
+      <div class="slider__item" style="background-image: url('./assets/img/slider2.jpg');">
+        <div class="slider__header">
           <h4 class="slider__subheading heading-4">Sản phẩm hữu cơ chất lượng cao</h4>
           <h1 class="slider__heading">Rau Củ</h1>
           <h3 class="slider__slogan">Không Chất Phụ Gia Có Hại</h3>
         </div>
         <a href="#" class="slider__link">Mua Ngay</a>
       </div>
-      <div class="slider-item" style="background-image: url('./assets/img/slider3.jpg');">
-        <div class="slider-header">
+      <div class="slider__item" style="background-image: url('./assets/img/slider3.jpg');">
+        <div class="slider__header">
           <h4 class="slider__subheading heading-4">Sản phẩm hữu cơ tươi</h4>
           <h1 class="slider__heading">Trái Cây</h1>
           <h3 class="slider__slogan">Với Nhiều Vitamin</h3>
         </div>
         <a href="#" class="slider__link">Mua Ngay</a>
       </div>
-      <button class="slider-btn slider-btn--prev disable">
+      <button class="slider__btn slider__btn--prev disable">
         <i class="far fa-angle-left slider__icon"></i>
       </button>
-      <button class="slider-btn slider-btn--next">
+      <button class="slider__btn slider__btn--next">
         <i class="far fa-angle-right slider__icon"></i>
       </button>
     </section>
     <section class="product container">
-      <div class="product-header">
+      <div class="product__header">
         <h4 class="product__subheading heading-4">Hàng Mới Nhất</h4>
-        <h2 class="product__heading">Sản Phẩm Mới</h2>
+        <h2 class="product__heading heading-2">Sản Phẩm Mới</h2>
       </div>
-      <div class="product-list grid">
-        <div class="product-item flex">
+      <div class="product__list grid">
+        <div class="product__item flex">
           <span class="product__label product__label--sale">Sale</span>
           <img src="./assets/img/product_banana.png" alt="img" class="product__img">
-          <div class="product-content">
+          <div class="product__content">
             <h5 class="product__name">Chuối</h5>
             <div class="product-price__container">
               <span class="product__price--old">20.000</span>
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product-btn">
+          <a href="#" class="product__btn">
             <i class="far fa-search product__icon search"></i>
           </a>
         </div>
-        <div class="product-item flex">
+        <div class="product__item flex">
           <span class="product__label product__label--new">New</span>
           <img src="./assets/img/product_bread.png" alt="img" class="product__img">
-          <div class="product-content">
+          <div class="product__content">
             <h5 class="product__name">Chuối</h5>
             <div class="product-price__container">
               <span class="product__price--old">20.000</span>
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product-btn">
+          <a href="#" class="product__btn">
             <i class="far fa-search product__icon search"></i>
           </a>
         </div>
-        <div class="product-item flex">
+        <div class="product__item flex">
           <span class="product__label product__label--sale">Sale</span>
           <img src="./assets/img/product_bread.png" alt="img" class="product__img">
-          <div class="product-content">
+          <div class="product__content">
             <h5 class="product__name">Chuối</h5>
             <div class="product-price__container">
               <span class="product__price--old">20.000</span>
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product-btn">
+          <a href="#" class="product__btn">
             <i class="far fa-search product__icon search"></i>
           </a>
         </div>
-        <div class="product-item flex">
+        <div class="product__item flex">
           <span class="product__label product__label--sale">Sale</span>
           <img src="./assets/img/product_bread.png" alt="img" class="product__img">
-          <div class="product-content">
+          <div class="product__content">
             <h5 class="product__name">Chuối</h5>
             <div class="product-price__container">
               <span class="product__price--old">20.000</span>
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product-btn">
+          <a href="#" class="product__btn">
             <i class="far fa-search product__icon search"></i>
           </a>
         </div>
-        <div class="product-item flex">
+        <div class="product__item flex">
           <span class="product__label product__label--sale">Sale</span>
           <img src="./assets/img/product_bread.png" alt="img" class="product__img">
-          <div class="product-content">
+          <div class="product__content">
             <h5 class="product__name">Chuối</h5>
             <div class="product-price__container">
               <span class="product__price--old">20.000</span>
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product-btn">
+          <a href="#" class="product__btn">
             <i class="far fa-search product__icon search"></i>
           </a>
         </div>
-        <div class="product-item flex">
+        <div class="product__item flex">
           <span class="product__label product__label--sale">Sale</span>
           <img src="./assets/img/product_bread.png" alt="img" class="product__img">
-          <div class="product-content">
+          <div class="product__content">
             <h5 class="product__name">Chuối</h5>
             <div class="product-price__container">
               <span class="product__price--old">20.000</span>
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product-btn">
+          <a href="#" class="product__btn">
             <i class="far fa-search product__icon search"></i>
           </a>
         </div>
-        <div class="product-item flex">
+        <div class="product__item flex">
           <span class="product__label product__label--sale">Sale</span>
           <img src="./assets/img/product_bread.png" alt="img" class="product__img">
-          <div class="product-content">
+          <div class="product__content">
             <h5 class="product__name">Chuối</h5>
             <div class="product-price__container">
               <span class="product__price--old">20.000</span>
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product-btn">
+          <a href="#" class="product__btn">
             <i class="far fa-search product__icon search"></i>
           </a>
         </div>
-        <div class="product-item flex">
+        <div class="product__item flex">
           <span class="product__label product__label--sale">Sale</span>
           <img src="./assets/img/product_bread.png" alt="img" class="product__img">
-          <div class="product-content">
+          <div class="product__content">
             <h5 class="product__name">Chuối</h5>
             <div class="product-price__container">
               <span class="product__price--old">20.000</span>
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product-btn">
+          <a href="#" class="product__btn">
             <i class="far fa-search product__icon search"></i>
           </a>
         </div>
       </div>
-      <a href="#" class="product-link">
+      <a href="#" class="product__link">
         Xem Thêm
         <i class="far fa-angle-right product__icon more"></i>
       </a>
     </section>
     <footer class="footer">
-      <div class="footer-top container grid">
-        <div class="footer-schedule">
+      <div class="footer__top container grid">
+        <div class="footer__schedule">
           <a href="#" class="logo">
             <img class="" src="./assets/img/logo.png" alt="logo__img">
           </a>
-          <div class="footer-time">
-            <p class="footer-date">Thứ Hai - Thứ Sáu: 08:00am - 08:00pm</p>
-            <p class="footer-date">Ngày Cuối Tuần: 10:00am - 06:00pm</p>
+          <div class="footer__time">
+            <p class="footer__date">Thứ Hai - Thứ Sáu: 08:00am - 08:00pm</p>
+            <p class="footer__date">Ngày Cuối Tuần: 10:00am - 06:00pm</p>
           </div>
         </div>
-        <div class="footer-contact">
+        <div class="footer__contact">
           <h4 class="footer__heading">Liên Hệ</h4>
-          <ul class="footer-list">
-            <li class="footer-item">
+          <ul class="footer__list">
+            <li class="footer__item">
               <i class="fas fa-map-marker-alt footer__icon"></i>
               3/2, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam
             </li>
-            <li class="footer-item">
+            <li class="footer__item">
               <i class="fas fa-phone-alt footer__icon"></i>
               <a href="tel:0123 456 789" class="footer__link">0123 456 789</a>
             </li>
-            <li class="footer-item">
+            <li class="footer__item">
               <i class="fas fa-envelope footer__icon"></i>
               <a href="mailto:farmorganicstore@gmail.com.vn" class="footer__link">farmorganicstore@gmail.com.vn</a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer__bottom">
         <p class="footer__copyright">© 2021 Farm.  All rights reserved.</p>
       </div>
     </footer>

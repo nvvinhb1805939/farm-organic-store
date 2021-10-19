@@ -1,0 +1,11 @@
+.hero {
+  padding: var(--top-bottom) 0;
+  background-position: center;
+  background-size: cover;
+}
+.hero__heading {
+  margin: 2.8rem 0;
+  text-align: center;
+  text-shadow: 3px 9px 16px rgb(0 0 0 / 18%);
+  color: var(--white);
+}

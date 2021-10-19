@@ -71,7 +71,7 @@ function getTotalPrice() {
 }
 /*-------------Toggle Scroll Btn When Scroll Page-------------*/
 document.onscroll = () => {
-  if(window.scrollY >= 500) {
+  if (window.scrollY >= 500) {
     scrollBtn.classList.remove('appear');
   } else {
     scrollBtn.classList.add('appear');

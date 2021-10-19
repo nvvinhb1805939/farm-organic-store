@@ -80,8 +80,25 @@ i {
   padding-right: var(--left-right);
   margin: 0 auto;
 }
+.mt-header {
+  margin-top: 7.4rem;
+}
 .logo {
   width: 14rem;
+}
+.img-link {
+  background-color: var(--light-gray);
+  border-radius: 0.4rem;
+}
+.img-link:hover .img-link__img {
+  transform: scale(1.05);
+}
+.heading-2 {
+  font-size: 5.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.18182;
 }
 .heading-4 {
   font-family: var(--second-font);
