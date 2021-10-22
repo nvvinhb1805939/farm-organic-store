@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,19 @@
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/category.css">
 </head>
+
 <body>
   <header class="header">
     <div class="header__container container flex">
-      <a href="#" class="logo">
+      <a href="./index.php" class="logo">
         <img src="./assets/img/logo.png" alt="" class="logo__img">
       </a>
       <nav class="header-nav">
-        <a href="#" class="header-nav__link active">Trang Chủ</a>
-        <a href="#" class="header-nav__link">Sản Phẩm</a>
-        <a href="#" class="header-nav__link">Liên Hệ</a>
+        <a href="./index.php" class="header-nav__link">Trang Chủ</a>
+        <a href="./category.php" class="header-nav__link active">Sản Phẩm</a>
+        <a href="./cart.php" class="header-nav__link">Giỏ Hàng</a>
+        <a href="./checkout.php" class="header-nav__link">Thanh Toán</a>
+        <a href="./contact.php" class="header-nav__link">Liên Hệ</a>
       </nav>
       <div class="header__user flex">
         <form action="./search.php" class="header__form flex" method="post">
@@ -33,11 +37,11 @@
           <div class="header-cart__wrapper">
             <div class="header-cart__header">
               <h5 class="header-cart__h5">
-                <span class="header-cart__amount">2</span> 
+                <span class="header-cart__amount">2</span>
                 Sản Phẩm Trong Giỏ Hàng
               </h5>
               <h6 class="header-cart__h6">
-                Tổng Cộng: 
+                Tổng Cộng:
                 <span class="header-cart__total">45000</span>
               </h6>
             </div>
@@ -60,7 +64,7 @@
                     <button class="header-cart__btn increase">
                       <i class="fal fa-plus"></i>
                     </button>
-                    <span class="header-cart__number header-cart__price">30000</span>   
+                    <span class="header-cart__number header-cart__price">30000</span>
                   </div>
                 </div>
               </li>
@@ -82,14 +86,14 @@
                     <button class="header-cart__btn increase">
                       <i class="fal fa-plus"></i>
                     </button>
-                    <span class="header-cart__number header-cart__price">15000</span>   
+                    <span class="header-cart__number header-cart__price">15000</span>
                   </div>
                 </div>
               </li>
             </ul>
             <div class="header-cart__bottom flex">
-              <a href="" class="header-cart__click view">Giỏ Hàng</a>
-              <a href="" class="header-cart__click checkout">Thanh Toán</a>
+              <a href="./cart.php" class="header-cart__click view">Giỏ Hàng</a>
+              <a href="./checkout.php" class="header-cart__click checkout">Thanh Toán</a>
             </div>
           </div>
         </div>
@@ -174,12 +178,15 @@
       </div>
     </aside>
     <div class="product__main">
-      <div class="product-sort">
-        <span class="product-sort__label">Showing 1–12 of 28 results</span>
+      <div class="product-sort flex">
+        <span class="product__result">Showing 1–12 of 28 results</span>
         <div class="product-sort__control">
-          <button class="product-sort__btn">Sắp xếp theo mới nhất</button>
+          <span class="product-sort__btn">
+            <span class="product-sort__label">Sắp xếp theo mới nhất</span>
+            <i class="fas fa-chevron-down product-sort__icon"></i>
+          </span>
           <ul class="product-sort__list">
-            <li class="product-sort__item">Sắp xếp theo mới nhất</li>
+            <li class="product-sort__item active">Sắp xếp theo mới nhất</li>
             <li class="product-sort__item">Sắp xếp theo phổ biến</li>
             <li class="product-sort__item">Sắp xếp theo chữ cái</li>
           </ul>
@@ -299,13 +306,24 @@
           </a>
         </div>
       </div>
-      <div class="product__pagination"></div>
+      <div class="product-pagination">
+        <a href="#" class="product-paganation__btn 
+        product-paganation__btn--redirect disable">
+          <i class="far fa-angle-left product-paganation__icon"></i>
+        </a>
+        <a href="#" class="product-paganation__btn active">1</a>
+        <a href="#" class="product-paganation__btn">2</a>
+        <a href="#" class="product-paganation__btn">3</a>
+        <a href="#" class="product-paganation__btn product-paganation__btn--redirect">
+          <i class="far fa-angle-right product-paganation__icon"></i>
+        </a>
+      </div>
     </div>
   </section>
   <footer class="footer">
     <div class="footer__top container grid">
       <div class="footer__schedule">
-        <a href="#" class="logo">
+        <a href="./index.php" class="logo">
           <img class="" src="./assets/img/logo.png" alt="logo__img">
         </a>
         <div class="footer__time">
@@ -332,7 +350,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__copyright">© 2021 Farm.  All rights reserved.</p>
+      <p class="footer__copyright">© 2021 Farm. All rights reserved.</p>
     </div>
   </footer>
   <a href="#" class="scroll-btn appear">
@@ -340,5 +358,7 @@
   </a>
 
   <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/category.js"></script>
 </body>
+
 </html>

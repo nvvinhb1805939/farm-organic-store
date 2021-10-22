@@ -1,9 +1,12 @@
+/*==============================VARIABLES==============================*/
 const sliderItems = document.querySelectorAll('.slider__item'),
   sliderLength = sliderItems.length,
   nextBtn = document.querySelector('.slider__btn--next'),
   prevBtn = document.querySelector('.slider__btn--prev'),
   backgroundStyle = "background-image: url('./assets/img/slider1.jpg');";
 let currentSlider = 1;
+
+/*==============================EVENT LISTENERS & FUNCTIONS==============================*/
 /*-------------Swipe Slider-------------*/
 prevBtn.onclick = () => {
   toPreSlide();

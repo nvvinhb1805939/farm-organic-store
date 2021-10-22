@@ -6,7 +6,7 @@
   padding: 1.2rem 0;
   background-color: var(--white);
   box-shadow: 0 0.2rem 0.2rem var(--shadow);
-  z-index: 1;
+  z-index: 2;
   user-select: none;
 }
 .header__container {
@@ -45,7 +45,7 @@
   cursor: pointer;
 }
 .header__form {
-  transform: translateX(calc(-4rem - var(--right)));
+  margin-right: calc(4rem + var(--right));
   padding: 1rem;
   border: 0.1rem solid var(--gray);
   border-radius: 5rem;
@@ -81,7 +81,7 @@
   border-radius: 1rem;
   box-shadow: 0 0 0.2rem 0.2rem var(--shadow);
   background-color: var(--white);
-  z-index: 1;
+  z-index: 2;
   opacity: 0;
   visibility: hidden;
 }

@@ -7,10 +7,12 @@
 
 /*-------------Override Product CSS-------------*/
 .product {
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 'filter main main main';
   grid-column-gap:3rem;
 }
 .product-filter {
+  grid-area: filter;
   text-align: left;
 }
 .product-filter__title {
@@ -25,6 +27,9 @@
 }
 .product-filter__list {
   margin-top: 2.4rem;
+}
+.product-filter__item {
+  justify-content: space-between;
 }
 .product-filter__item ~ .product-filter__item {
   margin-top: 1.2rem;
@@ -53,6 +58,9 @@
 .product-category__label:hover {
   color: var(--green);
 } 
+.product-popular__item {
+  justify-content: flex-start;
+}
 .product-popular__item ~ .product-popular__item {
   margin-top: 2rem;
 }
@@ -77,6 +85,87 @@
 .product-popular__link:hover {
   color: var(--green);
 }
+.product__main {
+  grid-area: main;
+}
+.product-sort__control {
+  position: relative;
+}
+.product-sort {
+  justify-content: space-between;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+.product-sort__btn {
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+.product-sort__icon {
+  margin-left: 1rem;
+  transition: inherit;
+}
+.product-sort__icon.rotate {
+  transform: rotate(-180deg);
+}
+.product-sort__list {
+  position: absolute;
+  margin-top: 1.2rem;
+  box-shadow: 0 0 .2rem .2rem var(--shadow);
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+.product-sort__list.show {
+  opacity: 1;
+  visibility: visible;
+}
+.product-sort__item {
+  padding: .4rem .8rem;
+  line-height: 1.72;
+  cursor: pointer;
+  user-select: none;
+}
+.product-sort__item.active,
+.product-sort__item:hover {
+  color: var(--white);
+  background-color: var(--green);
+}
 .product__list {
   grid-template-columns: repeat(3, 1fr);
+}
+.product-pagination {
+  user-select: none;
+}
+.product-paganation__btn {
+  --size: 4rem;
+  width: var(--size);
+  height: var(--size);
+  font-size: 1.8rem;
+  line-height: var(--size);
+  font-weight: 500;
+  background-color: var(--yellow);
+  color: var(--black);
+  border-radius: 50%;
+}
+.product-paganation__btn:hover,
+.product-paganation__btn.active {
+  color: var(--white);
+  background-color: var(--green);
+}
+.product-paganation__btn.active {
+  pointer-events: none;
+}
+.product-paganation__btn.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.product-paganation__btn--redirect {
+  font-size: 2rem;
+}
+.product-paganation__btn--redirect:hover .product-paganation__icon {
+  color: var(--white);
 }

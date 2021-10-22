@@ -26,7 +26,6 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.2s linear;
-  scroll-behavior: smooth;
 }
 ::selection {
   background-color: var(--green);
@@ -35,6 +34,7 @@
 html {
   font-family: var(--primary-font);
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   font-size: 1.4rem;

@@ -1,7 +1,8 @@
 =======GIAO DIỆN=======
 - Người dùng
   + Trang Chủ                X
-  + Danh Mục Sản Phẩm
+  + Danh Mục Sản Phẩm       ...
+    . Làm xem sản phẩm như janshop
   + Chi Tiết Sản Phẩm
   + Kết quả tìm kiếm
   + Giỏ Hàng
