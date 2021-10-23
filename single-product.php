@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tìm Kiếm</title>
+  <title>Chi Tiết Sản Phẩm</title>
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/search.css">
 </head>
 
 <body>
@@ -18,7 +17,7 @@
       </a>
       <nav class="header-nav">
         <a href="./index.php" class="header-nav__link">Trang Chủ</a>
-        <a href="./category.php" class="header-nav__link">Sản Phẩm</a>
+        <a href="./category.php" class="header-nav__link active">Sản Phẩm</a>
         <a href="./cart.php" class="header-nav__link">Giỏ Hàng</a>
         <a href="./checkout.php" class="header-nav__link">Thanh Toán</a>
       </nav>

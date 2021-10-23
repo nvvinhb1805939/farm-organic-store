@@ -12,7 +12,6 @@ const header = document.querySelector(".header"),
   increaseBtns = document.querySelectorAll(".header-cart__btn.increase"),
   priceLabels = document.querySelectorAll(".header-cart__price");
 let amountItems = items.length;
-
 /*-------------Scroll Btn-------------*/
 const scrollBtn = document.querySelector('.scroll-btn');
 

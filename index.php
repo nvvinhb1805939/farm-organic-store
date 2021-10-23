@@ -21,7 +21,6 @@
         <a href="./category.php" class="header-nav__link">Sản Phẩm</a>
         <a href="./cart.php" class="header-nav__link">Giỏ Hàng</a>
         <a href="./checkout.php" class="header-nav__link">Thanh Toán</a>
-        <a href="./contact.php" class="header-nav__link">Liên Hệ</a>
       </nav>
       <div class="header__user flex">
         <form action="./search.php" class="header__form flex" method="post">

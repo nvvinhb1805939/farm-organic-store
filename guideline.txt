@@ -1,14 +1,15 @@
 =======GIAO DIỆN=======
 - Người dùng
-  + Trang Chủ                X
-  + Danh Mục Sản Phẩm       ...
+  + Trang Chủ                 X
+  + Danh Mục Sản Phẩm         X
     . Làm xem sản phẩm như janshop
   + Chi Tiết Sản Phẩm
   + Kết quả tìm kiếm
-  + Giỏ Hàng
+  + Giỏ Hàng                  X
     . Khi giỏ hành rỗng -> set alternative img
     . Định dạng tiền (1000 -> 1.000)
   + Thanh Toán
+    . Lấy API tỉnh thành phố
   + Thanh Toán Thành Công
   + Liên Hệ
 - Admin/User:

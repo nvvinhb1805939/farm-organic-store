@@ -21,7 +21,6 @@
         <a href="./category.php" class="header-nav__link active">Sản Phẩm</a>
         <a href="./cart.php" class="header-nav__link">Giỏ Hàng</a>
         <a href="./checkout.php" class="header-nav__link">Thanh Toán</a>
-        <a href="./contact.php" class="header-nav__link">Liên Hệ</a>
       </nav>
       <div class="header__user flex">
         <form action="./search.php" class="header__form flex" method="post">
@@ -308,7 +307,7 @@
       </div>
       <div class="product-pagination">
         <a href="#" class="product-paganation__btn 
-        product-paganation__btn--redirect disable">
+              product-paganation__btn--redirect disable">
           <i class="far fa-angle-left product-paganation__icon"></i>
         </a>
         <a href="#" class="product-paganation__btn active">1</a>
