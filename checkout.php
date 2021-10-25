@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thanh Toán</title>
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/checkout.css">
+  <link rel="stylesheet" href="./assets/css/user/checkout.css">
 </head>
 
 <body>

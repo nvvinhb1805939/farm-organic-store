@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chi Tiết Sản Phẩm</title>
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/user/detail.css">
 </head>
 
 <body>
@@ -99,7 +100,7 @@
     </div>
   </header>
   <section class="hero mt-header" style="background-image: url('./assets/img/product_hero.jpg');">
-    <h2 class="hero__heading heading-2">Giỏ Hàng</h2>
+    <h2 class="hero__heading heading-2">Chi Tiết Sản Phẩm</h2>
   </section>
   <footer class="footer">
     <div class="footer__top container grid">

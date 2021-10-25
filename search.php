@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tìm Kiếm</title>
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/search.css">
+  <link rel="stylesheet" href="./assets/css/user/search.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <img src="./assets/img/logo.png" alt="" class="logo__img">
       </a>
       <nav class="header-nav">
-        <a href="./index.php" class="header-nav__link">Trang Chủ</a>
+        <a href="./index.php" class="header-nav__link active">Trang Chủ</a>
         <a href="./category.php" class="header-nav__link">Sản Phẩm</a>
         <a href="./cart.php" class="header-nav__link">Giỏ Hàng</a>
         <a href="./checkout.php" class="header-nav__link">Thanh Toán</a>
@@ -100,7 +100,7 @@
     </div>
   </header>
   <section class="hero mt-header" style="background-image: url('./assets/img/product_hero.jpg');">
-    <h2 class="hero__heading heading-2">Giỏ Hàng</h2>
+    <h2 class="hero__heading heading-2">Tìm Kiếm</h2>
   </section>
   <footer class="footer">
     <div class="footer__top container grid">
