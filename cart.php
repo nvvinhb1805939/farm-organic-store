@@ -176,7 +176,7 @@
     <i class="fal fa-arrow-up scroll__icon"></i>
   </a>
 
-  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/user/main.js"></script>
 
 </body>
 

@@ -35,3 +35,6 @@
   + Thanh toán
   + Liên hệ
 
+-----------
++ Custom circle 
++ custom icon font-size

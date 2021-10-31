@@ -29,31 +29,31 @@ if (!isset($_SESSION['user'])) {
       </a>
     </div>
     <nav class="aside__nav flex">
-      <a href="#" class="aside__link active">
+      <a href="./index.php" class="aside__link active">
         <span></span>
         <span></span>
         <i class="fas fa-file-contract aside__icon"></i>
         Đơn Hàng
       </a>
-      <a href="#" class="aside__link">
+      <a href="./staff" class="aside__link">
         <span></span>
         <span></span>
         <i class="fas fa-user aside__icon"></i>
         Nhân Viên
       </a>
-      <a href="#" class="aside__link">
+      <a href="./category" class="aside__link">
         <span></span>
         <span></span>
         <i class="far fa-tasks-alt aside__icon"></i>
         Danh Mục
       </a>
-      <a href="#" class="aside__link">
+      <a href="./product" class="aside__link">
         <span></span>
         <span></span>
         <i class="fad fa-pumpkin aside__icon"></i>
         Sản Phẩm
       </a>
-      <a href="#" class="aside__link">
+      <a href="./statistic" class="aside__link">
         <span></span>
         <span></span>
         <i class="far fa-chart-line aside__icon"></i>
@@ -65,7 +65,6 @@ if (!isset($_SESSION['user'])) {
 
   </main>
 
-  <script src="../../assets/js/management.js"></script>
 </body>
 
 </html>

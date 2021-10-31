@@ -17,22 +17,24 @@ require_once('./handleLogin.php');
   <link rel="stylesheet" href="../../assets/css/admin/login.css">
 </head>
 
-<body class="flex">
-  <main class="login">
-    <img src="../../assets/img/logo.png" alt="logo" class="login__logo logo">
-    <form method="POST" class="login__form">
-      <h3 class="login__heading">Đăng Nhập</h3>
-      <h4 class="login__message"><?= $message ?></h4>
-      <div class="login__field">
-        <input class="login__input" type="text" name="phone" placeholder="Số điện thoại">
-        <i class="fas fa-phone-alt login__icon"></i>
-      </div>
-      <div class="login__field">
-        <input class="login__input" type="password" name="pwd" placeholder="Mật khẩu">
-        <i class="fas fa-lock login__icon"></i>
-      </div>
-      <button class="login__btn" type="submit">Đăng Nhập</button>
-    </form>
+<body>
+  <main class="form__modal show">
+    <div class="form__wrapper">
+      <img src="../../assets/img/logo.png" alt="logo" class="logo">
+      <h3 class="form__heading">Đăng Nhập</h3>
+      <form method="POST" class="form show">
+        <h4 class="form__message"><?= $message ?></h4>
+        <div class="form__field">
+          <input class="form__input" type="text" name="phone" placeholder="Số điện thoại">
+          <i class="fas fa-phone-alt form__icon"></i>
+        </div>
+        <div class="form__field">
+          <input class="form__input" type="password" name="pwd" placeholder="Mật khẩu">
+          <i class="fas fa-lock form__icon"></i>
+        </div>
+        <button class="form__btn" type="submit">Đăng Nhập</button>
+      </form>
+    </div>
   </main>
 </body>
 
