@@ -3,8 +3,8 @@
 
 /* ======================VARIABLES======================*/
 :root {
-  --primary-font: 'Be Vietnam Pro', sans-serif;
-  --second-font: 'Kalam', cursive;
+  --primary-font: "Be Vietnam Pro", sans-serif;
+  --second-font: "Kalam", cursive;
 
   --green: #5c9155;
   --white: #fff;
@@ -16,12 +16,13 @@
 
   --top-bottom: 11rem;
   --left-right: 1.5rem;
+  --btn-size: 2.4rem;
 }
 
 /* ======================SETUP TAG======================*/
 *,
 ::before,
-::after{
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -50,14 +51,24 @@ a {
   cursor: pointer;
   user-select: none;
 }
-button {
-  display: inline-block;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   background: none;
   color: inherit;
   outline: none;
   cursor: pointer;
   user-select: none;
+}
+.circle-btn {
+  --size: 4rem;
+  width: var(--size);
+  height: var(--size);
+  font-size: var(--btn-size) !important;
+  line-height: var(--size);
+  border-radius: 50%;
 }
 img {
   display: inline-block;
@@ -112,8 +123,6 @@ i {
   position: fixed;
   bottom: var(--distance);
   right: var(--distance);
-  padding: 1.6rem 1.9rem;
-  border-radius: 50%;
   background-color: var(--green);
   color: var(--white);
   opacity: 0.6;

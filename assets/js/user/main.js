@@ -8,12 +8,12 @@ const header = document.querySelector(".header"),
   totalLabel = document.querySelector(".header-cart__total"),
   items = document.querySelectorAll(".header-cart__item"),
   quantityItems = document.querySelectorAll(".header-cart__quantity"),
-  descreaseBtns = document.querySelectorAll(".header-cart__btn.decrease"),
+  decreaseBtns = document.querySelectorAll(".header-cart__btn.decrease"),
   increaseBtns = document.querySelectorAll(".header-cart__btn.increase"),
   priceLabels = document.querySelectorAll(".header-cart__price");
 let amountItems = items.length;
 /*-------------Scroll Btn-------------*/
-const scrollBtn = document.querySelector('.scroll-btn');
+const scrollBtn = document.querySelector(".scroll-btn");
 
 /*==============================EVENT LISTENERS & FUNCTIONS==============================*/
 /*-------------Toggle Cart Wrapper-------------*/
@@ -27,8 +27,8 @@ window.onclick = () => {
   cartWrapper.classList.remove("show");
 };
 /*-------------Handle Quantity Items-------------*/
-descreaseBtns.forEach((descreaseBtn, index) => {
-  descreaseBtn.onclick = () => {
+decreaseBtns.forEach((decreaseBtn, index) => {
+  decreaseBtn.onclick = () => {
     handleQuantityItems(index, false);
   };
 });
@@ -42,7 +42,9 @@ function handleQuantityItems(index, isIncrease) {
   let price = Number(priceLabels[index].innerText);
   if (!isIncrease) {
     if (quantityItem == 1) {
-      const isDel = confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không?");
+      const isDel = confirm(
+        "Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không?"
+      );
       if (!isDel) {
         return;
       } else {
@@ -71,6 +73,7 @@ function getTotalPrice() {
 }
 /*-------------Toggle Scroll Btn When Scroll Page-------------*/
 document.onscroll = () => {
-  window.scrollY >= 500 ? scrollBtn.classList.remove('appear')
-    : scrollBtn.classList.add('appear');
+  window.scrollY >= 500
+    ? scrollBtn.classList.remove("appear")
+    : scrollBtn.classList.add("appear");
 };

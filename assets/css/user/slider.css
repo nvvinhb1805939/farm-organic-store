@@ -47,9 +47,6 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0.9rem 1.975rem;
-  font-size: 2.8rem;
-  border-radius: 50%;
   background-color: var(--black);
   transition: 0;
 }

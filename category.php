@@ -14,7 +14,7 @@
   <header class="header">
     <div class="header__container container flex">
       <a href="./index.php" class="logo">
-        <img src="./assets/img/logo.png" alt="" class="logo__img">
+        <img src="./assets/img/logo.png" alt="" class="logo__img" />
       </a>
       <nav class="header-nav">
         <a href="./index.php" class="header-nav__link">Trang Chủ</a>
@@ -24,14 +24,18 @@
       </nav>
       <div class="header__user flex">
         <form action="./search.php" class="header__form flex" method="post">
-          <input class="header__input" type="text" placeholder="Tìm kiếm sản phẩm">
-          <button class="header__btn search">
-            <i class="far fa-search header__icon search"></i>
+          <input
+            class="header__input"
+            type="text"
+            placeholder="Tìm kiếm sản phẩm"
+          />
+          <button class="header__btn search btn">
+            <ion-icon name="search-outline" class="header__icon search"></ion-icon>
           </button>
         </form>
         <div class="header-cart" data-quantity="2">
-          <button class="header__btn cart">
-            <i class="far fa-shopping-cart header__icon cart"></i>
+          <button class="header__btn cart btn">
+            <ion-icon name="cart-outline" class="header__icon cart"></ion-icon>
           </button>
           <div class="header-cart__wrapper">
             <div class="header-cart__header">
@@ -48,7 +52,11 @@
               <li class="header-cart__item flex" data-price="30000">
                 <div class="header-cart__left">
                   <a href="#" class="img-link">
-                    <img src="./assets/img/product_orange.png" alt="img" class="img-link__img">
+                    <img
+                      src="./assets/img/product_orange.png"
+                      alt="img"
+                      class="img-link__img"
+                    />
                   </a>
                 </div>
                 <div class="header-cart__right">
@@ -56,21 +64,29 @@
                     <a href="#">Cam</a>
                   </h6>
                   <div class="header-cart__control flex">
-                    <button class="header-cart__btn decrease">
-                      <i class="fal fa-minus"></i>
+                    <button class="header-cart__btn decrease btn">
+                      <ion-icon name="remove-outline"></ion-icon>
                     </button>
-                    <span class="header-cart__number header-cart__quantity">1</span>
-                    <button class="header-cart__btn increase">
-                      <i class="fal fa-plus"></i>
+                    <span class="header-cart__number header-cart__quantity"
+                      >1</span
+                    >
+                    <button class="header-cart__btn increase btn">
+                      <ion-icon name="add-outline"></ion-icon>
                     </button>
-                    <span class="header-cart__number header-cart__price">30000</span>
+                    <span class="header-cart__number header-cart__price"
+                      >30000</span
+                    >
                   </div>
                 </div>
               </li>
               <li class="header-cart__item flex" data-price="15000">
                 <div class="header-cart__left">
                   <a href="#" class="img-link">
-                    <img src="./assets/img/product_banana--mini.png" alt="img" class="img-link__img">
+                    <img
+                      src="./assets/img/product_banana--mini.png"
+                      alt="img"
+                      class="img-link__img"
+                    />
                   </a>
                 </div>
                 <div class="header-cart__right">
@@ -78,21 +94,29 @@
                     <a href="#">Chuối</a>
                   </h6>
                   <div class="header-cart__control flex">
-                    <button class="header-cart__btn decrease">
-                      <i class="fal fa-minus"></i>
+                    <button class="header-cart__btn decrease btn">
+                      <ion-icon name="remove-outline"></ion-icon>
                     </button>
-                    <span class="header-cart__number header-cart__quantity">1</span>
-                    <button class="header-cart__btn increase">
-                      <i class="fal fa-plus"></i>
+                    <span class="header-cart__number header-cart__quantity"
+                      >1</span
+                    >
+                    <button class="header-cart__btn increase btn">
+                      <ion-icon name="add-outline"></ion-icon>
                     </button>
-                    <span class="header-cart__number header-cart__price">15000</span>
+                    <span class="header-cart__number header-cart__price"
+                      >15000</span
+                    >
                   </div>
                 </div>
               </li>
             </ul>
             <div class="header-cart__bottom flex">
-              <a href="./cart.php" class="header-cart__click view">Giỏ Hàng</a>
-              <a href="./checkout.php" class="header-cart__click checkout">Thanh Toán</a>
+              <a href="./cart.php" class="header-cart__click view"
+                >Giỏ Hàng</a
+              >
+              <a href="./checkout.php" class="header-cart__click checkout"
+                >Thanh Toán</a
+              >
             </div>
           </div>
         </div>
@@ -180,9 +204,9 @@
       <div class="product-sort flex">
         <span class="product__result">Showing 1–12 of 28 results</span>
         <div class="product-sort__control">
-          <span class="product-sort__btn">
+          <span class="product-sort__btn flex">
             <span class="product-sort__label">Sắp xếp theo mới nhất</span>
-            <i class="fas fa-chevron-down product-sort__icon"></i>
+            <ion-icon name="chevron-down-outline" class="product-sort__icon"></ion-icon>
           </span>
           <ul class="product-sort__list">
             <li class="product-sort__item active">Sắp xếp theo mới nhất</li>
@@ -202,8 +226,8 @@
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product__btn">
-            <i class="far fa-search product__icon search"></i>
+          <a href="#" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
           </a>
         </div>
         <div class="product__item flex">
@@ -216,8 +240,8 @@
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product__btn">
-            <i class="far fa-search product__icon search"></i>
+          <a href="#" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
           </a>
         </div>
         <div class="product__item flex">
@@ -230,8 +254,8 @@
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product__btn">
-            <i class="far fa-search product__icon search"></i>
+          <a href="#" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
           </a>
         </div>
         <div class="product__item flex">
@@ -244,8 +268,8 @@
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product__btn">
-            <i class="far fa-search product__icon search"></i>
+          <a href="#" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
           </a>
         </div>
         <div class="product__item flex">
@@ -258,8 +282,8 @@
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product__btn">
-            <i class="far fa-search product__icon search"></i>
+          <a href="#" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
           </a>
         </div>
         <div class="product__item flex">
@@ -272,8 +296,8 @@
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product__btn">
-            <i class="far fa-search product__icon search"></i>
+          <a href="#" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
           </a>
         </div>
         <div class="product__item flex">
@@ -286,8 +310,8 @@
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product__btn">
-            <i class="far fa-search product__icon search"></i>
+          <a href="#" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
           </a>
         </div>
         <div class="product__item flex">
@@ -300,21 +324,21 @@
               <span class="product__price--new">15.000</span>
             </div>
           </div>
-          <a href="#" class="product__btn">
-            <i class="far fa-search product__icon search"></i>
+          <a href="#" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
           </a>
         </div>
       </div>
-      <div class="product-pagination">
-        <a href="#" class="product-paganation__btn 
-              product-paganation__btn--redirect disable">
-          <i class="far fa-angle-left product-paganation__icon"></i>
+      <div class="product-pagination flex">
+        <a href="#" class="product-paganation__btn
+        product-paganation__btn--redirect disable  btn circle-btn">
+          <ion-icon name="chevron-back-outline" class="product-paganation__icon"></ion-icon>
         </a>
-        <a href="#" class="product-paganation__btn active">1</a>
-        <a href="#" class="product-paganation__btn">2</a>
-        <a href="#" class="product-paganation__btn">3</a>
-        <a href="#" class="product-paganation__btn product-paganation__btn--redirect">
-          <i class="far fa-angle-right product-paganation__icon"></i>
+        <a href="#" class="product-paganation__btn active btn circle-btn">1</a>
+        <a href="#" class="product-paganation__btn btn circle-btn">2</a>
+        <a href="#" class="product-paganation__btn btn circle-btn">3</a>
+        <a href="#" class="product-paganation__btn btn circle-btn product-paganation__btn--redirect">
+          <ion-icon name="chevron-forward-outline" class="product-paganation__icon"></ion-icon>
         </a>
       </div>
     </div>
@@ -323,7 +347,7 @@
     <div class="footer__top container grid">
       <div class="footer__schedule">
         <a href="./index.php" class="logo">
-          <img class="" src="./assets/img/logo.png" alt="logo__img">
+          <img class="" src="./assets/img/logo.png" alt="logo__img" />
         </a>
         <div class="footer__time">
           <p class="footer__date">Thứ Hai - Thứ Sáu: 08:00am - 08:00pm</p>
@@ -333,17 +357,21 @@
       <div class="footer__contact">
         <h4 class="footer__heading">Liên Hệ</h4>
         <ul class="footer__list">
-          <li class="footer__item">
-            <i class="fas fa-map-marker-alt footer__icon"></i>
+          <li class="footer__item flex">
+            <ion-icon name="location-outline" class="footer__icon"></ion-icon>
             3/2, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam
           </li>
-          <li class="footer__item">
-            <i class="fas fa-phone-alt footer__icon"></i>
+          <li class="footer__item flex">
+            <ion-icon name="call-outline" class="footer__icon"></ion-icon>
             <a href="tel:0123 456 789" class="footer__link">0123 456 789</a>
           </li>
-          <li class="footer__item">
-            <i class="fas fa-envelope footer__icon"></i>
-            <a href="mailto:farmorganicstore@gmail.com.vn" class="footer__link">farmorganicstore@gmail.com.vn</a>
+          <li class="footer__item flex">
+            <ion-icon name="mail-outline" class="footer__icon""></ion-icon>
+            <a
+              href="mailto:farmorganicstore@gmail.com.vn"
+              class="footer__link"
+              >farmorganicstore@gmail.com.vn</a
+            >
           </li>
         </ul>
       </div>
@@ -352,10 +380,12 @@
       <p class="footer__copyright">© 2021 Farm. All rights reserved.</p>
     </div>
   </footer>
-  <a href="#" class="scroll-btn appear">
-    <i class="fal fa-arrow-up scroll__icon"></i>
+  <a href="#" class="scroll-btn btn circle-btn appear">
+    <ion-icon name="arrow-up-outline" class="scroll__icon"></ion-icon>
   </a>
 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/user/main.js"></script>
   <script src="./assets/js/user/category.js"></script>
 </body>

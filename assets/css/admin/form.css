@@ -23,7 +23,7 @@
   background-color: var(--white);
   border-radius: 1rem;
 }
-.form__heading{
+.form__heading {
   margin-top: var(--distance);
   margin-bottom: var(--distance);
   font-size: 2.4rem;
@@ -73,12 +73,14 @@
   color: red;
 }
 .form__field {
+  display: flex;
+  align-items: center;
   position: relative;
   padding: var(--pd);
   border-radius: var(--radius);
   background-color: var(--light-gray);
 }
-.form__field ~ .form__field  {
+.form__field ~ .form__field {
   margin-top: 1rem;
 }
 .form__input {
@@ -95,7 +97,7 @@
   border-radius: var(--radius);
   outline: none;
 }
-.form__input:focus ~ .form__icon{
+.form__input:focus ~ .form__icon {
   color: var(--green);
 }
 .form__input:focus::placeholder {

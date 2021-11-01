@@ -106,7 +106,7 @@
     <div class="footer__top container grid">
       <div class="footer__schedule">
         <a href="./index.php" class="logo">
-          <img class="" src="./assets/img/logo.png" alt="logo__img">
+          <img class="" src="./assets/img/logo.png" alt="logo__img" />
         </a>
         <div class="footer__time">
           <p class="footer__date">Thứ Hai - Thứ Sáu: 08:00am - 08:00pm</p>
@@ -116,17 +116,21 @@
       <div class="footer__contact">
         <h4 class="footer__heading">Liên Hệ</h4>
         <ul class="footer__list">
-          <li class="footer__item">
-            <i class="fas fa-map-marker-alt footer__icon"></i>
+          <li class="footer__item flex">
+            <ion-icon name="location-outline" class="footer__icon"></ion-icon>
             3/2, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam
           </li>
-          <li class="footer__item">
-            <i class="fas fa-phone-alt footer__icon"></i>
+          <li class="footer__item flex">
+            <ion-icon name="call-outline" class="footer__icon"></ion-icon>
             <a href="tel:0123 456 789" class="footer__link">0123 456 789</a>
           </li>
-          <li class="footer__item">
-            <i class="fas fa-envelope footer__icon"></i>
-            <a href="mailto:farmorganicstore@gmail.com.vn" class="footer__link">farmorganicstore@gmail.com.vn</a>
+          <li class="footer__item flex">
+            <ion-icon name="mail-outline" class="footer__icon""></ion-icon>
+            <a
+              href="mailto:farmorganicstore@gmail.com.vn"
+              class="footer__link"
+              >farmorganicstore@gmail.com.vn</a
+            >
           </li>
         </ul>
       </div>
@@ -135,10 +139,12 @@
       <p class="footer__copyright">© 2021 Farm. All rights reserved.</p>
     </div>
   </footer>
-  <a href="#" class="scroll-btn appear">
-    <i class="fal fa-arrow-up scroll__icon"></i>
+  <a href="#" class="scroll-btn btn circle-btn appear">
+    <ion-icon name="arrow-up-outline" class="scroll__icon"></ion-icon>
   </a>
 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/user/main.js"></script>
 
 </body>
