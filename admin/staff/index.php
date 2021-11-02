@@ -9,6 +9,8 @@ if (!isset($_SESSION['user'])) {
   die();
 }
 
+require_once('./handleInfo.php');
+
 $queryData = "select * from NhanVien";
 $data = getDataBySelect($queryData);
 
@@ -33,45 +35,45 @@ $data = getDataBySelect($queryData);
         <img src="../../assets/img/logo.png" alt="img" class="logo__img">
       </a>
     </div>
-    <nav class="aside__nav flex">
-      <a href="../order" class="aside__link">
+    <nav class="aside__nav">
+      <a href="../order" class="aside__link flex">
         <span></span>
         <span></span>
-        <i class="fas fa-file-contract aside__icon main-table__icon"></i>
+        <ion-icon name="bag-handle" class="aside__icon"></ion-icon>
         Đơn Hàng
       </a>
-      <a href="#" class="aside__link active">
+      <a href="#" class="aside__link flex active">
         <span></span>
         <span></span>
-        <i class="fas fa-user aside__icon main-table__icon"></i>
+        <ion-icon name="person" class="aside__icon"></ion-icon>
         Nhân Viên
       </a>
-      <a href="../category" class="aside__link">
+      <a href="../category" class="aside__link flex">
         <span></span>
         <span></span>
-        <i class="far fa-tasks-alt aside__icon main-table__icon"></i>
+        <ion-icon name="apps" class="aside__icon"></ion-icon>
         Danh Mục
       </a>
-      <a href="../product" class="aside__link">
+      <a href="../product" class="aside__link flex">
         <span></span>
         <span></span>
-        <i class="fad fa-pumpkin aside__icon main-table__icon"></i>
+        <ion-icon name="fast-food" class="aside__icon"></ion-icon>
         Sản Phẩm
       </a>
-      <a href="../statistic" class="aside__link">
+      <a href="../statistic" class="aside__link flex">
         <span></span>
         <span></span>
-        <i class="far fa-chart-line aside__icon main-table__icon"></i>
+        <ion-icon name="stats-chart" class="aside__icon"></ion-icon>
         Thống Kê
       </a>
     </nav>
   </aside>
   <main class="main">
     <nav class="main-nav main__wrapper flex">
-      <button class="main-nav__btn">
-        <i class="far fa-bars main-nav__icon main-table__icon"></i>
+      <button class="main-nav__btn btn circle-btn">
+        <ion-icon name="chevron-back-outline" class="main-nav__icon"></ion-icon>
       </button>
-      <div class="main-nav__avt">
+      <div class="main-nav__avt btn circle-btn">
         <img src="../../assets/img/avt1.jpg" alt="avt" class="main-nav__img">
       </div>
       <ul class="main-nav__list">
@@ -85,8 +87,8 @@ $data = getDataBySelect($queryData);
           </span>
         </li>
         <li class="main-nav__item">
-          <a href="../auth/logout.php" class="main-nav__link">
-            <i class="far fa-power-off main-table__icon"></i>
+          <a href="../auth/logout.php" class="main-nav__link btn">
+            <ion-icon name="power" class="main-nav__icon"></ion-icon>
             Đăng Xuất
           </a>
         </li>
@@ -94,8 +96,8 @@ $data = getDataBySelect($queryData);
     </nav>
     <div class="main__wrapper">
       <h2 class="main__heading">Quản Lý Nhân Viên</h2>
-      <button class="main__btn main__btn--add">
-        <i class="fas fa-plus"></i>
+      <button class="main__btn main__btn--add btn circle-btn">
+        <ion-icon name="add-outline"></ion-icon>
       </button>
       <table class="main-table" width="100%">
         <tr>
@@ -119,13 +121,13 @@ $data = getDataBySelect($queryData);
               <td class="main-table__address">' . $row['DiaChi'] . '</td>
               <td class="main-table__role">' . $row['ChucVu'] . '</td>
               <td>
-                <button class="main__btn main__btn--edit">
-                  <i class="fas fa-pencil-alt main-table__icon"></i>
+                <button class="main__btn main__btn--edit btn circle-btn">
+                  <ion-icon name="pencil-outline" class="main-table__icon"></ion-icon>
                 </button>
               </td>
               <td>
-                <button class="main__btn main__btn--delete">
-                  <i class="fas fa-trash-alt main-table__icon"></i>
+                <button class="main__btn main__btn--delete btn circle-btn">
+                  <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
                 </button>
               </td>
 				    </tr>';
@@ -133,43 +135,47 @@ $data = getDataBySelect($queryData);
         ?>
       </table>
     </div>
-    <div id="form__modal" class="form__modal" data-id>
+    <div class="form__modal">
       <div class="form__wrapper">
         <h3 class="form__heading">heading</h3>
-        <div class="form-tab">
-          <button class="form-tab__btn active">
-            <i class="fas fa-info form-tab__icon"></i>
+        <h4 class="form__message"><?=$message?></h4>
+        <div class="form-tab flex">
+          <button class="form-tab__btn active btn">
+            <ion-icon name="information-circle" class="form-tab__icon"></ion-icon>
             Thông tin
           </button>
-          <button class="form-tab__btn">
-            <i class="fas fa-lock form-tab__icon"></i>
+          <button class="form-tab__btn btn">
+            <ion-icon name="lock-closed" class="form-tab__icon"></ion-icon>
             Mật khẩu
           </button>
         </div>
         <div class="form__list">
-          <form method="POST" class="form show">
+          <form method="POST" class="form show" onsubmit="return validateFormUserInfo();">
             <div class="form__field" style="display: none;">
               <input class="form__input" type="text" name="id">
             </div>
+            <div class="form__field" style="display: none;">
+              <input class="form__input" type="text" name="kind">
+            </div>
             <div class="form__field">
               <input class="form__input" type="text" name="phone" placeholder="Số điện thoại">
-              <i class="fas fa-phone-alt form__icon"></i>
+              <ion-icon name="phone-portrait" class="form__icon"></ion-icon>
             </div>
             <div class="form__field">
               <input class="form__input" type="text" name="name" placeholder="Họ tên">
-              <i class="far fa-text form__icon"></i>
+              <ion-icon name="document-text" class="form__icon"></ion-icon>
             </div>
             <div class="form__field">
               <input class="form__input" type="text" name="address" placeholder="Địa chỉ">
-              <i class="fas fa-address-book form__icon"></i>
+              <ion-icon name="map" class="form__icon"></ion-icon>
             </div>
             <div class="form__field">
               <input class="form__input" type="text" name="role" placeholder="Chức vụ">
-              <i class="fas fa-user-tag form__icon"></i>
+              <ion-icon name="accessibility" class="form__icon"></ion-icon>
             </div>
             <div class="form-btn__wrapper">
-              <button class="form__btn form__btn--save" type="submit">Lưu</button>
-              <button class="form__btn form__btn--cancel" type="button">Hủy</button>
+              <button class="form__btn form__btn--save btn" type="submit">Lưu</button>
+              <button class="form__btn form__btn--cancel btn" type="button">Hủy</button>
             </div>
           </form>
           <form method="POST" class="form">
@@ -178,15 +184,15 @@ $data = getDataBySelect($queryData);
             </div>
             <div class="form__field">
               <input class="form__input" type="password" name="pwd" placeholder="Mật khẩu">
-              <i class="fas fa-lock form__icon"></i>
+              <ion-icon name="lock-closed" class="form__icon"></ion-icon>
             </div>
             <div class="form__field">
               <input class="form__input" type="password" name="confirmPwd" placeholder="Xác nhận mật khẩu">
-              <i class="fas fa-lock form__icon"></i>
+              <ion-icon name="lock-closed" class="form__icon"></ion-icon>
             </div>
             <div class="form-btn__wrapper">
-              <button class="form__btn form__btn--save" type="submit">Lưu</button>
-              <button class="form__btn form__btn--cancel" type="button">Hủy</button>
+              <button class="form__btn form__btn--save btn" type="submit">Lưu</button>
+              <button class="form__btn form__btn--cancel btn" type="button">Hủy</button>
             </div>
           </form>
         </div>
@@ -195,6 +201,8 @@ $data = getDataBySelect($queryData);
 
   </main>
 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="../../assets/js/admin/main.js"></script>
 </body>
 

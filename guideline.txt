@@ -17,8 +17,8 @@
   + Trang Quản Lý
 =======CHỨC NĂNG=======
 - Admin:
-  + Đăng nhập
-  + Quản lý nhân viên
+  + Đăng nhập X
+  + Quản lý nhân viên ...
   + Quản lý danh mục sản phẩm
   + Quản lý sản phẩm
   + Quản lý đơn hàng

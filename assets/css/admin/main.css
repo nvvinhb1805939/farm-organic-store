@@ -26,17 +26,21 @@
 .main-nav__btn {
   margin-top: 0.4rem;
   font-size: 2.4rem;
+  color: var(--black);
+  background-color: var(--yellow);
+}
+.main-nav__btn:hover {
+  background-color: var(--green);
+  color: var(--white);
 }
 .main-nav__btn:hover .main-nav__icon {
-  color: var(--green);
+  color: var(--white);
+}
+.main-nav__icon.rotate {
+  transform: rotate(180deg);
 }
 .main-nav__avt {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
   overflow: hidden;
-  cursor: pointer;
-  user-select: none;
   transition: none;
 }
 .main-nav__avt:hover {
@@ -58,7 +62,7 @@
 }
 .main-nav__list::before {
   --size: 1.6rem;
-  content: '';
+  content: "";
   position: absolute;
   top: calc(-1 * var(--size) / 2);
   right: calc(0.4rem + var(--size) / 2);
@@ -88,14 +92,18 @@
   border-bottom-right-radius: var(--radius);
 }
 .main-nav__link {
+  justify-content: flex-start;
   padding: var(--pd);
-  display: block;
+}
+.main-nav__link .main-nav__icon {
+  margin-right: 1rem;
 }
 .main-table {
   border-spacing: 0;
   text-align: left;
 }
-th, td {
+th,
+td {
   padding: 0.4rem 2rem;
   line-height: 1.6;
   border-bottom: 0.1rem solid var(--light-gray);
@@ -103,11 +111,6 @@ th, td {
 th:first-of-type,
 td:first-of-type {
   text-align: center;
-}
-.main__btn {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
 }
 .main__btn--add {
   margin-bottom: 1rem;
@@ -131,7 +134,7 @@ td:first-of-type {
 }
 .main__btn--delete:hover {
   color: var(--white);
-  background-color: var(--green);;
+  background-color: var(--green);
 }
 .main__btn--delete:hover .main-table__icon {
   color: var(--white);

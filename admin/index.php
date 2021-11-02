@@ -24,39 +24,39 @@ if (!isset($_SESSION['user'])) {
 <body>
   <aside class="aside">
     <div class="aside__logo">
-      <a href="./index.php" class="logo">
+      <a href="." class="logo">
         <img src="../assets/img/logo.png" alt="img" class="logo__img">
       </a>
     </div>
-    <nav class="aside__nav flex">
-      <a href="./index.php" class="aside__link active">
+    <nav class="aside__nav">
+      <a href="../order" class="aside__link active flex">
         <span></span>
         <span></span>
-        <i class="fas fa-file-contract aside__icon"></i>
+        <ion-icon name="bag-handle" class="aside__icon"></ion-icon>
         Đơn Hàng
       </a>
-      <a href="./staff" class="aside__link">
+      <a href="./staff" class="aside__link flex">
         <span></span>
         <span></span>
-        <i class="fas fa-user aside__icon"></i>
+        <ion-icon name="person" class="aside__icon"></ion-icon>
         Nhân Viên
       </a>
-      <a href="./category" class="aside__link">
+      <a href="../category" class="aside__link flex">
         <span></span>
         <span></span>
-        <i class="far fa-tasks-alt aside__icon"></i>
+        <ion-icon name="apps" class="aside__icon"></ion-icon>
         Danh Mục
       </a>
-      <a href="./product" class="aside__link">
+      <a href="../product" class="aside__link flex">
         <span></span>
         <span></span>
-        <i class="fad fa-pumpkin aside__icon"></i>
+        <ion-icon name="fast-food" class="aside__icon"></ion-icon>
         Sản Phẩm
       </a>
-      <a href="./statistic" class="aside__link">
+      <a href="../statistic" class="aside__link flex">
         <span></span>
         <span></span>
-        <i class="far fa-chart-line aside__icon"></i>
+        <ion-icon name="stats-chart" class="aside__icon"></ion-icon>
         Thống Kê
       </a>
     </nav>
@@ -65,6 +65,8 @@ if (!isset($_SESSION['user'])) {
 
   </main>
 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

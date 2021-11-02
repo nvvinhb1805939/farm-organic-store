@@ -7,7 +7,7 @@ SEARCh
 LOCATE
 <ion-icon name="location-outline footer__icon"></ion-icon>
 PHONE 
-              <ion-icon name="call-outline footer__icon"></ion-icon>
+              <ion-icon name="call-outline"></ion-icon>
 MAIL 
 <ion-icon name="mail-outline" class="footer__icon""></ion-icon>
 UP ARROW
@@ -18,3 +18,17 @@ MOBILE
 <ion-icon name="phone-portrait-outline"></ion-icon>
 LOCK 
 <ion-icon name="lock-closed-outline"></ion-icon>
+BAR
+<ion-icon name="reorder-four-outline"></ion-icon>
+BAG 
+<ion-icon name="bag-handle-outline"></ion-icon>
+User
+<ion-icon name="person"></ion-icon>
+APP 
+<ion-icon name="apps"></ion-icon>
+PRoDUCT 
+        <ion-icon name="fast-food" class="aside__icon"></ion-icon>
+CHART 
+        <ion-icon name="stats-chart" class="aside__icon"></ion-icon>
+PLUS 
+<ion-icon name="add-outline"></ion-icon>

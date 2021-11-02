@@ -26,11 +26,11 @@ require_once('./handleLogin.php');
         <h4 class="form__message"><?= $message ?></h4>
         <div class="form__field">
           <input class="form__input" type="text" name="phone" placeholder="Số điện thoại">
-          <ion-icon name="phone-portrait-outline" class="form__icon"></ion-icon>
+          <ion-icon name="phone-portrait" class="form__icon"></ion-icon>
         </div>
         <div class="form__field">
           <input class="form__input" type="password" name="pwd" placeholder="Mật khẩu">
-          <ion-icon name="lock-closed-outline" class="form__icon"></ion-icon>
+          <ion-icon name="lock-closed" class="form__icon"></ion-icon>
         </div>
         <button class="form__btn btn" type="submit">Đăng Nhập</button>
       </form>
