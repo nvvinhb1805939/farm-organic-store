@@ -17,6 +17,7 @@ const userIds = document.querySelectorAll(".main-table__id"),
   userPhones = document.querySelectorAll(".main-table__phone"),
   userAddresses = document.querySelectorAll(".main-table__address"),
   userRoles = document.querySelectorAll(".main-table__role");
+let newPhoneIndex = 0;
 /*-------------Form-------------*/
 const formModal = document.querySelector(".form__modal"),
   formWrapper = document.querySelector(".form__wrapper"),
@@ -26,7 +27,7 @@ const formModal = document.querySelector(".form__modal"),
   formTabBtns = document.querySelectorAll(".form-tab__btn"),
   cancelBtns = document.querySelectorAll(".form__btn--cancel"),
   userIdInputs = document.querySelectorAll('.form__input[name="id"]'),
-  userKindInput = document.querySelector('.form__input[name="kind"]'),
+  isUpdate = document.querySelectorAll('.form__input[name="isUpdate"]'),
   userPhoneInput = document.querySelector('.form__input[name="phone"]'),
   userPwdInput = document.querySelector('.form__input[name="pwd"]'),
   userConfirmPwdInput = document.querySelector(
@@ -77,21 +78,29 @@ function loadTableDatasToForm(index) {
 addBtn.onclick = () => {
   showModal("Thêm thông tin nhân viên");
   formTabBtns[1].style = "display: none";
-  userKindInput.value = 0;
-  console.log(userKindInput.value);
+  displayInfoForm();
+  setInputValues(isUpdate, 0);
+  newPhoneIndex = -1;
 };
 editBtns.forEach((editBtn, index) => {
   editBtn.onclick = () => {
     showModal("Cập nhật thông tin nhân viên");
     loadTableDatasToForm(index);
     formTabBtns[1].style = "display: block";
-    userKindInput.value = 1;
-    console.log(userKindInput.value);
+    displayInfoForm();
+    setInputValues(isUpdate, 1);
+    newPhoneIndex = index;
   };
 });
 function showModal(heading) {
   formModal.classList.add("show");
   formHeading.innerText = heading;
+}
+function displayInfoForm() {
+  document.querySelector(".form-tab__btn.active").classList.remove("active");
+  formTabBtns[0].classList.add("active");
+  document.querySelector(".form.show").classList.remove("show");
+  formElements[0].classList.add("show");
 }
 /*-------------Close Form Modal-------------*/
 formModal.onclick = () => {
@@ -126,6 +135,8 @@ formTabBtns.forEach((formTabBtn, index) => {
     document.querySelector(".form.show").classList.remove("show");
     formElements[index].classList.add("show");
     formMessage.innerText = "";
+    setInputValues(isUpdate, index + 1);
+    // isUpdatePassword.value = index;
   };
 });
 /*-------------Form Validation-------------*/
@@ -180,11 +191,47 @@ function validateRole() {
     return false;
   } else return true;
 }
+function findDuplicatePhone(newPhone, newIndex) {
+  const phones = getTableDatas(userPhones);
+  return phones.find((phone, index) => {
+    return phone == newPhone && index != newIndex;
+  });
+}
+function validatePassword() {
+  const password = userPwdInput.value.trim();
+  const regex = /^\S{8,12}$/;
+  if (!regex.test(password)) {
+    formMessage.innerText =
+      "Mật khẩu gồm 8 - 12 ký tự và không chứa khoảng trắng!";
+    userPwdInput.focus();
+    return false;
+  } else return true;
+}
 function validateFormUserInfo() {
   if (!validatePhone()) return false;
   if (!validateName()) return false;
   if (!validateAddress()) return false;
   if (!validateRole()) return false;
-  alert("Thêm thông tin nhân viên thành công!");
+  if (findDuplicatePhone(userPhoneInput.value, newPhoneIndex) != undefined) {
+    formMessage.innerText =
+      "Số điện thoại đã được đăng ký. Vui lòng kiểm tra lại!";
+    userPhoneInput.focus();
+    return false;
+  }
+  isUpdate.value == 0
+    ? alert("Thêm thông tin nhân viên thành công!")
+    : alert("Cập nhật thông tin nhân viên thành công!");
+  return true;
+}
+function validateFormUserPassword() {
+  if (!validatePassword()) return false;
+  if (userConfirmPwdInput.value.trim() !== userPwdInput.value.trim()) {
+    formMessage.innerText = "Mật khẩu không khớp. Vui lòng kiểm tra lại!";
+    userConfirmPwdInput.focus();
+    return false;
+  }
+  isUpdate.value == 0
+    ? alert("Thêm thông tin nhân viên thành công!")
+    : alert("Cập nhật thông tin nhân viên thành công!");
   return true;
 }

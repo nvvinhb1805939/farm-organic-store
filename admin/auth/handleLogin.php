@@ -7,7 +7,7 @@ $phone = $message = '';
 if (!empty($_POST)) {
   $phone = getDataByMethod('POST', 'phone');
   $pwd = getDataByMethod('POST', 'pwd');
-  // $pwd = getHashPassword($pwd);
+  $pwd = getHashPassword($pwd);
 
   $query = "select * from nhanvien where SoDienThoai = '$phone' and Password = '$pwd'";
   $userData = getDataBySelect($query, true);

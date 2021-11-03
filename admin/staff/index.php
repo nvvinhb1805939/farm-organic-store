@@ -138,7 +138,7 @@ $data = getDataBySelect($queryData);
     <div class="form__modal">
       <div class="form__wrapper">
         <h3 class="form__heading">heading</h3>
-        <h4 class="form__message"><?=$message?></h4>
+        <h4 class="form__message"></h4>
         <div class="form-tab flex">
           <button class="form-tab__btn active btn">
             <ion-icon name="information-circle" class="form-tab__icon"></ion-icon>
@@ -155,7 +155,7 @@ $data = getDataBySelect($queryData);
               <input class="form__input" type="text" name="id">
             </div>
             <div class="form__field" style="display: none;">
-              <input class="form__input" type="text" name="kind">
+              <input class="form__input" type="text" name="isUpdate">
             </div>
             <div class="form__field">
               <input class="form__input" type="text" name="phone" placeholder="Số điện thoại">
@@ -178,9 +178,12 @@ $data = getDataBySelect($queryData);
               <button class="form__btn form__btn--cancel btn" type="button">Hủy</button>
             </div>
           </form>
-          <form method="POST" class="form">
+          <form method="POST" class="form" onsubmit="return validateFormUserPassword();">
             <div class="form__field" style="display: none;">
               <input class="form__input" type="text" name="id">
+            </div>
+            <div class="form__field" style="display: none;">
+              <input class="form__input" type="text" name="isUpdate">
             </div>
             <div class="form__field">
               <input class="form__input" type="password" name="pwd" placeholder="Mật khẩu">

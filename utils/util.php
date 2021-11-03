@@ -29,7 +29,7 @@ function getDataByMethod($method, $key)
 
 function getHashPassword($pwd)
 {
-	return md5(md5($pwd) . PRIVATE_KEY);
+	return substr(md5(md5($pwd) . PRIVATE_KEY), 0, 12);
 }
 
 // function moveFile($key, $rootPath = "../../")
