@@ -10,8 +10,8 @@ if (!isset($_SESSION['user'])) {
 }
 
 require_once('./handleInfo.php');
-
-$queryData = "select * from NhanVien";
+$password = getHashPassword('nguyrnxdnmkri489%9128%$%0124>,..fjdfgh');
+$queryData = "select * from NhanVien where Password <> '$password'";
 $data = getDataBySelect($queryData);
 
 ?>
@@ -24,6 +24,7 @@ $data = getDataBySelect($queryData);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quản Lý Nhân Viên</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../../assets/css/admin/staff.css">
 </head>
@@ -31,7 +32,7 @@ $data = getDataBySelect($queryData);
 <body>
   <aside class="aside">
     <div class="aside__logo">
-      <a href="." class="logo">
+      <a href="#" class="logo">
         <img src="../../assets/img/logo.png" alt="img" class="logo__img">
       </a>
     </div>
@@ -113,8 +114,8 @@ $data = getDataBySelect($queryData);
         $index = 0;
         foreach ($data as $row) {
           echo '
-            <span class="main-table__id" style="display: none;">' . $row['MSNV'] . '</span>
-            <tr>
+          <tr class="main-table__row">
+              <td class="main-table__id" style="display: none;">' . $row['MSNV'] . '</td>
               <td>' . (++$index) . '</td>
               <td class="main-table__name">' . $row['HoTenNV'] . '</td>
               <td class="main-table__phone">' . $row['SoDienThoai'] . '</td>
@@ -126,7 +127,7 @@ $data = getDataBySelect($queryData);
                 </button>
               </td>
               <td>
-                <button class="main__btn main__btn--delete btn circle-btn">
+                <button class="main__btn main__btn--delete btn circle-btn" onclick="deleteUser('.$row['MSNV'].', \''.$row['HoTenNV'].'\')">
                   <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
                 </button>
               </td>
@@ -207,6 +208,23 @@ $data = getDataBySelect($queryData);
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="../../assets/js/admin/main.js"></script>
+  <script>
+    /*-------------Delete User-------------*/
+    /*
+      1. Delete Usera chỉ là xóa thông tin nhân viên khỏi HTML => dữ liệu trên DB vẫn còn
+      2. Set password cho nhân viên bị xóa là "" => không cho đăng nhập
+    */
+    function deleteUser(userId, userName) {
+      const isDelete = confirm(`Bạn có muốn xoá thông tin nhân viên ${userName} không?`);
+      if(isDelete) {
+        $.post('remove.php', {
+          'userId': userId,
+        }, function(data) {
+          location.reload()
+        })
+      }
+    }
+  </script>
 </body>
 
 </html>

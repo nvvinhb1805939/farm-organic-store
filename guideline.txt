@@ -18,7 +18,7 @@
 =======CHỨC NĂNG=======
 - Admin:
   + Đăng nhập X
-  + Quản lý nhân viên ...
+  + Quản lý nhân viên X
   + Quản lý danh mục sản phẩm
   + Quản lý sản phẩm
   + Quản lý đơn hàng

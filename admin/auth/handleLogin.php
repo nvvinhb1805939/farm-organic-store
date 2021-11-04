@@ -11,7 +11,7 @@ if (!empty($_POST)) {
 
   $query = "select * from nhanvien where SoDienThoai = '$phone' and Password = '$pwd'";
   $userData = getDataBySelect($query, true);
-  if ($userData == null || $pwd == '') {
+  if ($userData == null|| $pwd == '') {
     $message = 'Đăng nhập không thành công.<br>Vui lòng kiểm tra số điện thoại hoặc mật khẩu!';
   } else {
     $_SESSION['user'] = $phone;

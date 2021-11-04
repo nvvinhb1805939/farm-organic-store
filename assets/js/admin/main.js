@@ -9,10 +9,10 @@ const navBarBtn = document.querySelector(".main-nav__btn"),
   avtElement = document.querySelector(".main-nav__avt"),
   navList = document.querySelector(".main-nav__list"),
   editBtns = document.querySelectorAll(".main__btn--edit"),
-  deleteBtns = document.querySelectorAll(".main__btn--delete"),
   addBtn = document.querySelector(".main__btn--add");
 /*-------------Table-------------*/
-const userIds = document.querySelectorAll(".main-table__id"),
+const userRows = document.querySelectorAll(".main-table__row"),
+  userIds = document.querySelectorAll(".main-table__id"),
   userNames = document.querySelectorAll(".main-table__name"),
   userPhones = document.querySelectorAll(".main-table__phone"),
   userAddresses = document.querySelectorAll(".main-table__address"),
@@ -136,7 +136,6 @@ formTabBtns.forEach((formTabBtn, index) => {
     formElements[index].classList.add("show");
     formMessage.innerText = "";
     setInputValues(isUpdate, index + 1);
-    // isUpdatePassword.value = index;
   };
 });
 /*-------------Form Validation-------------*/
@@ -218,9 +217,11 @@ function validateFormUserInfo() {
     userPhoneInput.focus();
     return false;
   }
-  isUpdate.value == 0
-    ? alert("Thêm thông tin nhân viên thành công!")
-    : alert("Cập nhật thông tin nhân viên thành công!");
+  if (isUpdate[0].value === "0") {
+    alert("Thêm thông tin nhân viên thành công!");
+  } else {
+    alert("Cập nhật thông tin nhân viên thành công!");
+  }
   return true;
 }
 function validateFormUserPassword() {
@@ -230,8 +231,10 @@ function validateFormUserPassword() {
     userConfirmPwdInput.focus();
     return false;
   }
-  isUpdate.value == 0
-    ? alert("Thêm thông tin nhân viên thành công!")
-    : alert("Cập nhật thông tin nhân viên thành công!");
+  if (isUpdate[0].value === "0") {
+    alert("Thêm thông tin nhân viên thành công!");
+  } else {
+    alert("Cập nhật thông tin nhân viên thành công!");
+  }
   return true;
 }
