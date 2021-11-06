@@ -3,15 +3,14 @@
   + Trang Chủ                 X
   + Danh Mục Sản Phẩm         X
     . Làm xem sản phẩm như janshop
-  + Chi Tiết Sản Phẩm
-  + Kết quả tìm kiếm
+  + Chi Tiết Sản Phẩm   ...
+  + Kết quả tìm kiếm  ...
   + Giỏ Hàng                  X
     . Khi giỏ hành rỗng -> set alternative img
     . Định dạng tiền (1000 -> 1.000)
-  + Thanh Toán
+  + Thanh Toán ...
     . Lấy API tỉnh thành phố
   + Thanh Toán Thành Công
-  + Liên Hệ
 - Admin/User:
   + Trang Đăng Nhập
   + Trang Quản Lý
@@ -19,14 +18,14 @@
 - Admin:
   + Đăng nhập X
   + Quản lý nhân viên X
-  + Quản lý danh mục sản phẩm
+  + Quản lý danh mục sản phẩm X
   + Quản lý sản phẩm
   + Quản lý đơn hàng
   + Quản Lý Doanh Thu
 - Nhân viên:
-  + Đăng nhập
-  + Quản lý danh mục sản phẩm
-  + Quản lý sản phẩm
+  + Đăng nhập X
+  + Quản lý danh mục sản phẩm X
+  + Quản lý sản phẩm X
   + Quản lý đơn hàng
   + Quản Lý Doanh Thu
 - Người dùng:
@@ -36,5 +35,6 @@
   + Liên hệ
 
 -----------
-+ Custom circle 
-+ custom icon font-size
++ Custom circle X
++ custom icon font-size X
++ Xử lý khi bảng thông tin rỗng

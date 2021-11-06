@@ -9,7 +9,7 @@ if (!isset($_SESSION['user'])) {
   die();
 }
 
-require_once('./handleInfo.php');
+require_once('./addUpdate.php');
 $password = getHashPassword('nguyrnxdnmkri489%9128%$%0124>,..fjdfgh');
 $queryData = "select * from NhanVien where Password <> '$password'";
 $data = getDataBySelect($queryData);
@@ -43,7 +43,7 @@ $data = getDataBySelect($queryData);
         <ion-icon name="bag-handle" class="aside__icon"></ion-icon>
         Đơn Hàng
       </a>
-      <a href="#" class="aside__link flex active">
+      <a href="./" class="aside__link flex active">
         <span></span>
         <span></span>
         <ion-icon name="person" class="aside__icon"></ion-icon>
@@ -97,8 +97,8 @@ $data = getDataBySelect($queryData);
     </nav>
     <div class="main__wrapper">
       <h2 class="main__heading">Quản Lý Nhân Viên</h2>
-      <button class="main__btn main__btn--add btn circle-btn">
-        <ion-icon name="add-outline"></ion-icon>
+      <button class="main__btn no-mg main__btn--add btn circle-btn">
+        <ion-icon name="add"></ion-icon>
       </button>
       <table class="main-table" width="100%">
         <tr>
@@ -115,23 +115,23 @@ $data = getDataBySelect($queryData);
         foreach ($data as $row) {
           echo '
           <tr class="main-table__row">
-              <td class="main-table__id" style="display: none;">' . $row['MSNV'] . '</td>
-              <td>' . (++$index) . '</td>
-              <td class="main-table__name">' . $row['HoTenNV'] . '</td>
-              <td class="main-table__phone">' . $row['SoDienThoai'] . '</td>
-              <td class="main-table__address">' . $row['DiaChi'] . '</td>
-              <td class="main-table__role">' . $row['ChucVu'] . '</td>
-              <td>
-                <button class="main__btn main__btn--edit btn circle-btn">
-                  <ion-icon name="pencil-outline" class="main-table__icon"></ion-icon>
-                </button>
-              </td>
-              <td>
-                <button class="main__btn main__btn--delete btn circle-btn" onclick="deleteUser('.$row['MSNV'].', \''.$row['HoTenNV'].'\')">
-                  <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
-                </button>
-              </td>
-				    </tr>';
+            <td>' . (++$index) . '</td>
+            <td class="main-table__id" style="display: none;">' . $row['MSNV'] . '</td>
+            <td class="main-table__name">' . $row['HoTenNV'] . '</td>
+            <td class="main-table__phone">' . $row['SoDienThoai'] . '</td>
+            <td class="main-table__address">' . $row['DiaChi'] . '</td>
+            <td class="main-table__role">' . $row['ChucVu'] . '</td>
+            <td>
+              <button class="main__btn main__btn--edit btn circle-btn">
+                <ion-icon name="pencil" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+            <td>
+              <button class="main__btn main__btn--delete btn circle-btn">
+                <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+          </tr>';
         }
         ?>
       </table>
@@ -151,7 +151,7 @@ $data = getDataBySelect($queryData);
           </button>
         </div>
         <div class="form__list">
-          <form method="POST" class="form show" onsubmit="return validateFormUserInfo();">
+          <form method="POST" class="form show">
             <div class="form__field" style="display: none;">
               <input class="form__input" type="text" name="id">
             </div>
@@ -164,11 +164,11 @@ $data = getDataBySelect($queryData);
             </div>
             <div class="form__field">
               <input class="form__input" type="text" name="name" placeholder="Họ tên">
-              <ion-icon name="document-text" class="form__icon"></ion-icon>
+              <ion-icon name="text" class="form__icon"></ion-icon>
             </div>
             <div class="form__field">
               <input class="form__input" type="text" name="address" placeholder="Địa chỉ">
-              <ion-icon name="map" class="form__icon"></ion-icon>
+              <ion-icon name="location" class="form__icon"></ion-icon>
             </div>
             <div class="form__field">
               <input class="form__input" type="text" name="role" placeholder="Chức vụ">
@@ -179,7 +179,7 @@ $data = getDataBySelect($queryData);
               <button class="form__btn form__btn--cancel btn" type="button">Hủy</button>
             </div>
           </form>
-          <form method="POST" class="form" onsubmit="return validateFormUserPassword();">
+          <form method="POST" class="form">
             <div class="form__field" style="display: none;">
               <input class="form__input" type="text" name="id">
             </div>
@@ -207,24 +207,7 @@ $data = getDataBySelect($queryData);
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="../../assets/js/admin/main.js"></script>
-  <script>
-    /*-------------Delete User-------------*/
-    /*
-      1. Delete Usera chỉ là xóa thông tin nhân viên khỏi HTML => dữ liệu trên DB vẫn còn
-      2. Set password cho nhân viên bị xóa là "" => không cho đăng nhập
-    */
-    function deleteUser(userId, userName) {
-      const isDelete = confirm(`Bạn có muốn xoá thông tin nhân viên ${userName} không?`);
-      if(isDelete) {
-        $.post('remove.php', {
-          'userId': userId,
-        }, function(data) {
-          location.reload()
-        })
-      }
-    }
-  </script>
+  <script type="module" src="../../assets/js/admin/staff.js" ></script>
 </body>
 
 </html>
