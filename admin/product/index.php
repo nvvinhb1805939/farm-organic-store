@@ -51,13 +51,13 @@ $categoryItems = getDataBySelect($sql);
         <ion-icon name="person" class="aside__icon"></ion-icon>
         Nhân Viên
       </a>
-      <a href="./" class="aside__link flex">
+      <a href="../category/" class="aside__link flex">
         <span></span>
         <span></span>
         <ion-icon name="apps" class="aside__icon"></ion-icon>
         Danh Mục
       </a>
-      <a href="../product" class="aside__link active flex">
+      <a href="./" class="aside__link active flex">
         <span></span>
         <span></span>
         <ion-icon name="fast-food" class="aside__icon"></ion-icon>
@@ -119,8 +119,8 @@ $categoryItems = getDataBySelect($sql);
           <tr class="main-table__row">
               <td>' . (++$index) . '</td>
               <td class="main-table__id" style="display: none;">' . $row['MSHH'] . '</td>
-              <td class="main-table__img">
-                <img src="' . $row['url_img'] . '" alt="img"> 
+              <td>
+                <img class="main-table__img" src="' . $row['url_img'] . '" alt="img"> 
               </td>
               <td class="main-table__name">' . $row['TenHH'] . '</td>
               <td class="main-table__desc">' . $row['QuyCach'] . '</td>
@@ -147,42 +147,56 @@ $categoryItems = getDataBySelect($sql);
         <h3 class="form__heading">heading</h3>
         <h4 class="form__message"></h4>
         <form method="POST" class="form show">
-          <div class="form__field" style="display: none;">
-            <input class="form__input" type="text" name="id">
+          <div class="form__left">
+            <div class="form__avt">
+              <img src="" alt="" class="form__img">
+            </div>
+            <div class="form__field">
+              <label class="form__label flex" for="url">Chọn ảnh</label>
+              <input id="url" class="form__file" type="file" accept="image/*">
+            </div>
           </div>
-          <div class="form__field" style="display: none;">
-            <input class="form__input" type="text" name="isUpdate">
-          </div>
-          <div class="form__field">
-            <input class="form__input" type="text" name="name" placeholder="Tên sản phẩm">
-            <ion-icon name="text" class="form__icon"></ion-icon>
-          </div>
-          <div class="form__field">
-            <select class="form__input" name="category_id" id="category_id">
-              <option value="" selected disabled>-- Chọn danh mục sản phẩm --</option>
-              <?php
-                foreach($categoryItems as $categoryItem) {
-                  echo '<option class="form__option" value="'.$categoryItem['MaLoaiHang'].'">'.$categoryItem['TenLoaiHang'].'</option>';
-                }
-              ?>
-            </select>
-            <ion-icon name="apps" class="form__icon"></ion-icon>
-          </div>
-          <div class="form__field reverse">
-            <textarea class="form__desc" name="desc" placeholder="Mô tả sản phẩm"  cols="100" rows="10" contenteditable></textarea>
-            <ion-icon name="document-text" class="form__icon">></ion-icon>
-          </div>
-          <div class="form__field">
-            <input class="form__input" type="text" name="price" placeholder="Giá">
-            <ion-icon name="pricetag" class="form__icon"></ion-icon>
-          </div>
-          <div class="form__field">
-            <input class="form__input" type="text" name="quantity" placeholder="Số lượng">
-            <ion-icon name="dice" class="form__icon"></ion-icon>
-          </div>
-          <div class="form-btn__wrapper">
-            <button class="form__btn form__btn--save btn" type="submit">Lưu</button>
-            <button class="form__btn form__btn--cancel btn" type="button">Hủy</button>
+          <div class="form__right">
+            <div class="form__field" style="display: none;">
+              <input class="form__input" type="text" name="url">
+            </div>
+            <div class="form__field" style="display: none;">
+              <input class="form__input" type="text" name="id">
+            </div>
+            <div class="form__field" style="display: none;">
+              <input class="form__input" type="text" name="isUpdate">
+            </div>
+            <div class="form__field mt-0">
+              <input class="form__input" type="text" name="name" placeholder="Tên sản phẩm">
+              <ion-icon name="text" class="form__icon"></ion-icon>
+            </div>
+            <div class="form__field">
+              <select class="form__input" name="category_id" id="category_id">
+                <option value="" selected disabled>-- Chọn danh mục sản phẩm --</option>
+                <?php
+                  foreach($categoryItems as $categoryItem) {
+                    echo '<option class="form__option" value="'.$categoryItem['MaLoaiHang'].'">'.$categoryItem['TenLoaiHang'].'</option>';
+                  }
+                ?>
+              </select>
+              <ion-icon name="apps" class="form__icon"></ion-icon>
+            </div>
+            <div class="form__field reverse">
+              <textarea class="form__desc" name="desc" placeholder="Mô tả sản phẩm"  cols="100" rows="9" contenteditable></textarea>
+              <ion-icon name="document-text" class="form__icon">></ion-icon>
+            </div>
+            <div class="form__field">
+              <input class="form__input" type="text" name="price" placeholder="Giá">
+              <ion-icon name="pricetag" class="form__icon"></ion-icon>
+            </div>
+            <div class="form__field">
+              <input class="form__input" type="text" name="quantity" placeholder="Số lượng">
+              <ion-icon name="dice" class="form__icon"></ion-icon>
+            </div>
+            <div class="form-btn__wrapper">
+              <button class="form__btn form__btn--save btn" type="submit">Lưu</button>
+              <button class="form__btn form__btn--cancel btn" type="button">Hủy</button>
+            </div>
           </div>
         </form>
       </div>

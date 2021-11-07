@@ -3,6 +3,7 @@
 @import url(./form.css);
 @import url(./main.css);
 
+/* ======================TABLE======================*/
 .main-table__desc {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -12,8 +13,56 @@
   white-space: pre-wrap;
   overflow: hidden;
 }
-.main-table__img img {
+.main-table__img {
   max-width: unset;
   width: 10rem;
   object-fit: cover;
+}
+/* ======================FORM======================*/
+.form__wrapper {
+  width: 75%;
+}
+.form.show {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 3fr);
+  grid-column-gap: 3rem;
+  grid-auto-rows: 1fr;
+}
+.form__avt {
+  --bd: 0.1rem;
+  position: relative;
+  width: 100%;
+  padding-top: calc(100% - var(--bd) * 2);
+  margin-bottom: 2rem;
+  border: var(--bd) solid var(--light-gray);
+}
+.form__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  object-fit: cover;
+}
+.form__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.025em;
+  justify-content: center;
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: inherit;
+  cursor: pointer;
+}
+.form__label:hover {
+  color: var(--black);
+  background-color: var(--yellow);
+}
+.form__field.mt-0 {
+  margin-top: 0;
 }

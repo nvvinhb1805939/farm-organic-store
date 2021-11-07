@@ -102,8 +102,7 @@ $data = getDataBySelect($queryData);
       </button>
       <table class="main-table" width="100%">
         <tr>
-          <th>STT</th>
-          <th>Họ Tên</th>
+          <th colspan="2">Nhân Viên</th>
           <th>Số Điện Thoại</th>
           <th>Địa Chỉ</th>
           <th>Chức Vụ</th>

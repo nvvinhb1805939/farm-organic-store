@@ -5,7 +5,9 @@
 
     if(!empty($_POST)) {
         $productId = getDataByMethod('POST', 'productId');
-        $query = "Delete from HangHoa where MSHH = $productId";
-        executeQuery($query);
+        $imgQuery = "Delete from HinhHangHoa where MSHH = $productId";
+        executeQuery($imgQuery);
+        $productQuery = "Delete from HangHoa where MSHH = $productId";
+        executeQuery($productQuery);
     }
 ?>

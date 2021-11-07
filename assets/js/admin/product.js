@@ -7,7 +7,8 @@ const productIds = document.querySelectorAll(".main-table__id"),
   productDescs = document.querySelectorAll(".main-table__desc"),
   productPrices = document.querySelectorAll(".main-table__price"),
   productQuantities = document.querySelectorAll(".main-table__quantity"),
-  productCategories = document.querySelectorAll(".main-table__category");
+  productCategories = document.querySelectorAll(".main-table__category"),
+  productImgs = document.querySelectorAll(".main-table__img");
 let newProductIndex = 0;
 /*-------------Form-------------*/
 const formElement = document.querySelector(".form"),
@@ -22,8 +23,20 @@ const formElement = document.querySelector(".form"),
   productPriceInput = document.querySelector('.form__input[name="price"]'),
   productQuantityInput = document.querySelector(
     '.form__input[name="quantity"]'
-  );
+  ),
+  productImgInput = document.querySelector(".form__file"),
+  formImg = document.querySelector(".form__img"),
+  productUrlInput = document.querySelector('.form__input[name="url"]');
 /*==============================EVENTS & FUNCTIONS==============================*/
+/*-------------Change Img When Change Img File-------------*/
+productImgInput.oninput = event => {
+  const path = "../../assets/img/";
+  const url = event.target.value.split("\\");
+  const fileName = url[url.length - 1];
+  const dataUrl = `${path}${fileName}`;
+  formImg.src = dataUrl;
+  productUrlInput.value = dataUrl;
+};
 /*-------------Load Data From Table To Form Modal When Edit-------------*/
 function formatMoneyToInt(tableData) {
   const money = tableData.slice(0, tableData.length - 4).trim();
@@ -39,6 +52,13 @@ function getSelectedIndex(tableData) {
   }
   return 0;
 }
+function getUrlImg(imgs) {
+  const urls = [];
+  imgs.forEach(img => {
+    urls.push(img.src);
+  });
+  return urls;
+}
 function loadTableDatasToForm(index) {
   productIdInput.value = main.getTableDatas(productIds)[index];
   productNameInput.value = main.getTableDatas(productNames)[index];
@@ -50,6 +70,8 @@ function loadTableDatasToForm(index) {
   productCategorySelect.selectedIndex = getSelectedIndex(
     main.getTableDatas(productCategories)[index]
   );
+  productUrlInput.value = getUrlImg(productImgs)[index];
+  formImg.src = getUrlImg(productImgs)[index];
 }
 /*-------------Open Form Modal-------------*/
 main.addBtn.onclick = () => {
@@ -84,6 +106,9 @@ function resetFormDatas() {
   productPriceInput.value = "";
   productQuantityInput.value = "";
   productCategorySelect.selectedIndex = 0;
+  formImg.src = "";
+  productImgInput.value = "";
+  productUrlInput.value = "";
 }
 function closeFormModal() {
   main.formModal.classList.remove("show");
@@ -128,11 +153,24 @@ function validateQuantity() {
     return false;
   } else return true;
 }
+function validateImg() {
+  if (
+    formImg.src == "" ||
+    formImg.src == "http://localhost:8080/b1805939_NVV/admin/product/"
+  ) {
+    main.formMessage.innerText = "Vui lòng chọn hình ảnh!";
+    productImgInput.focus();
+    return false;
+  } else {
+    return true;
+  }
+}
 function validateFormProductInfo() {
   if (!validateName()) return false;
   if (!validateCategory()) return false;
   if (!validatePrice()) return false;
   if (!validateQuantity()) return false;
+  if (!validateImg()) return false;
   if (
     main.findDuplicateField(
       main.getTableDatas(productNames),

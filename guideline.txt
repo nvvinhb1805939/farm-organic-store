@@ -19,7 +19,7 @@
   + Đăng nhập X
   + Quản lý nhân viên X
   + Quản lý danh mục sản phẩm X
-  + Quản lý sản phẩm
+  + Quản lý sản phẩm X
   + Quản lý đơn hàng
   + Quản Lý Doanh Thu
 - Nhân viên:
@@ -35,6 +35,9 @@
   + Liên hệ
 
 -----------
++ Phân quyền:
+  . Admin: toàn quyền
+  .Nhân viên: Sản phẩm, danh mục, đơn hàng, thống kê
 + Custom circle X
 + custom icon font-size X
 + Xử lý khi bảng thông tin rỗng
