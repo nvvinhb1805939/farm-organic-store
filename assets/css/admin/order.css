@@ -2,3 +2,38 @@
 @import url(./aside.css);
 @import url(./form.css);
 @import url(./main.css);
+
+.main-table__status-txt {
+  --height: 4rem;
+  display: block;
+  height: var(--height);
+  width: max-content;
+  padding: 0 0.8rem;
+  text-align: center;
+  line-height: var(--height);
+  border-radius: 0.5rem;
+}
+.main-table__status-txt.pending {
+  color: var(--white);
+  background-color: var(--gray);
+}
+.main-table__status-txt.repare {
+  color: var(--white);
+  background-color: var(--black);
+}
+.main-table__status-txt.delivery {
+  color: var(--black);
+  background-color: var(--yellow);
+}
+.main-table__status-txt.success {
+  color: var(--white);
+  background-color: var(--green);
+}
+.main-table__status-txt.cancel {
+  color: var(--white);
+  background-color: red;
+}
+.main__btn.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -9,11 +9,16 @@ if (!isset($_SESSION['user'])) {
   die();
 }
 
-require_once('./addUpdate.php');
+$status = [];
+$statusClassName = [];
+$deleteClassName = [];
+$editClassName = [];
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 // $dataQuery = "SELECT KhachHang.*, DiaChiKH.DiaChi as address FROM KhachHang LEFT JOIN DiaChiKH ON KhachHang.MSKH = DiaChiKH.MSKH";
 $dataQuery = "SELECT DatHang.*, NhanVien.HoTenNV as staff_name, KhachHang.HoTenKH as customer_name FROM DatHang LEFT JOIN KhachHang ON DatHang.MSKH = KhachHang.MSKH LEFT JOIN NhanVien ON DatHang.MSNV = NhanVien.MSNV";
 $data = getDataBySelect($dataQuery);
+
 
 ?>
 
@@ -97,43 +102,83 @@ $data = getDataBySelect($dataQuery);
       </ul>
     </nav>
     <div class="main__wrapper">
-        <h2 class="main__heading">Quản Lý Đơn Hàng</h2>
-        <table class="main-table" width="100%">
-            <tr>
-                <th>Số Đơn Hàng</th>
-                <th>Khách Hàng</th>
-                <th>Nhân viên</th>
-                <th>Ngày Đặt Hàng</th>
-                <th>Ngày Giao Hàng</th>
-                <th>Trạng Thái ĐƠn Hàng</th>
-                <th></th>
-                <th></th>
-            </tr>
-            <?php
-            $index = 0;
-            foreach ($data as $row) {
+      <h2 class="main__heading">Quản Lý Đơn Hàng</h2>
+      <table class="main-table" width="100%">
+        <tr>
+            <th>Số ĐH</th>
+            <th>Khách Hàng</th>
+            <th>Nhân viên</th>
+            <th>Ngày Đặt</th>
+            <th>Ngày Giao</th>
+            <th>Trạng Thái</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <?php
+          $index = 0;
+          foreach ($data as $row) {
+            switch($row['TrangThaiDH']) {
+              case 0:
+                  $status[$index] = "Chờ xác nhận";
+                  $statusClassName[$index] = "pending";
+                  $deleteClassName[$index] = "";
+                  $editClassName[$index] = "";
+                  $row['NgayGH'] = "";
+                  break;
+              case 1:
+                  $status[$index] = "Chờ lấy hàng";
+                  $statusClassName[$index] = "repare";
+                  $deleteClassName[$index] = "";
+                  $editClassName[$index] = "";
+                  $row['NgayGH'] = "";
+                  break;
+              case 2:
+                  $status[$index] = "Đang giao";
+                  $statusClassName[$index] = "delivery";
+                  $deleteClassName[$index] = "disable";
+                  $editClassName[$index] = "";
+                  $row['NgayGH'] = "";
+                  break;
+              case 3:
+                  $status[$index] = "Đã giao";
+                  $statusClassName[$index] = "success";
+                  $deleteClassName[$index] = "disable";
+                  $editClassName[$index] = "disable";
+                  $row['NgayGH'] = date('m/d/Y h:i a', time());
+                  break;
+              default:
+                  $status[$index] = "Đã hủy";
+                  $statusClassName[$index] = "cancel";
+                  $deleteClassName[$index] = "disable";
+                  $editClassName[$index] = "disable";
+                  $row['NgayGH'] = "";
+                  break;
+            }
             echo '
             <tr class="main-table__row">
-                <td>' . (++$index) . '</td>
-                <td class="main-table__id>' . $row['SoDonDH'] . '</td>
-                <td class="main-table__name-customer">' . $row['customer_name'] . '</td>
-                <td class="main-table__name-staff">' . $row['staff_name'] . '</td>
-                <td class="main-table__order-date">' . $row['NgayDH'] . '</td>
-                <td class="main-table__delivery-date">' . $row['NgayGH'] . '</td>
-                <td class="main-table__status">' . $row['TrangThaiDH'] . '</td>
-                <td>
-                    <button class="main__btn main__btn--edit btn circle-btn">
+              <td class="main-table__id">' . $row['SoDonDH'] . '</td>
+              <td class="main-table__name-customer">' . $row['customer_name'] . '</td>
+              <td class="main-table__name-staff">' . $row['staff_name'] . '</td>
+              <td class="main-table__order-date">' . $row['NgayDH'] . '</td>
+              <td class="main-table__delivery-date">' . $row['NgayGH'] . '</td>
+              <td>
+                <span class="main-table__status" style="display: none;">'.$row['TrangThaiDH'].'</span>
+                <span class="main-table__status-txt '.$statusClassName[$index].'">'.$status[$index].'</span>
+              </td>
+              <td>
+                  <button class="main__btn '.$editClassName[$index].' main__btn--edit btn circle-btn">
                     <ion-icon name="pencil" class="main-table__icon"></ion-icon>
-                    </button>
-                </td>
-                <td>
-                    <button class="main__btn main__btn--delete btn circle-btn">
+                  </button>
+              </td>
+              <td>
+                  <button class="main__btn '.$deleteClassName[$index].' main__btn--delete btn circle-btn">
                     <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
-                    </button>
-                </td>
+                  </button>
+              </td>
             </tr>';
-            }
-            ?>
+            $index++;
+          }
+        ?>
       </table>
     </div>
     <div class="form__modal">
@@ -200,7 +245,7 @@ $data = getDataBySelect($dataQuery);
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script type="module" src="../../assets/js/admin/product.js"></script>
+  <script type="module" src="../../assets/js/admin/order.js"></script>
 </body>
 
 </html>

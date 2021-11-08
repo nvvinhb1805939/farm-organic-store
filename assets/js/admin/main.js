@@ -16,7 +16,7 @@ const formModal = document.querySelector(".form__modal"),
   formWrapper = document.querySelector(".form__wrapper"),
   formHeading = document.querySelector(".form__heading"),
   formMessage = document.querySelector(".form__message");
-/*==============================EVENTS & FUNCTIONS==============================*/
+/*==============================EVENTS & export FUNCTIONS==============================*/
 /*-------------Toggle Aside Element-------------*/
 navBarBtn.onclick = () => {
   asideElement.classList.toggle("hide");

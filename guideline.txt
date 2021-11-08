@@ -41,3 +41,5 @@
 + Custom circle X
 + custom icon font-size X
 + Xử lý khi bảng thông tin rỗng
++ Xử lý khi order:
+  . Nhân viên nào xác nhận => set session[user] => nhanvien
