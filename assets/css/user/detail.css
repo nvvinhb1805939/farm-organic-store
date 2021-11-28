@@ -2,3 +2,95 @@
 @import url(./header.css);
 @import url(./hero.css);
 @import url(./footer.css);
+
+.product {
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 6rem;
+  padding-top: var(--top-bottom);
+  padding-bottom: var(--top-bottom);
+}
+.product__img {
+  display: inline-block;
+  height: 48rem;
+  width: 100%;
+  background-color: var(--light-gray);
+  object-fit: scale-down;
+}
+.product__name {
+  text-transform: capitalize;
+  color: var(--green);
+}
+.product__price {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+.product__desc {
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  border-bottom: 0.2rem solid var(--light-gray);
+}
+.product__additional {
+  letter-spacing: 0.05em;
+}
+.product__additional + .product__additional {
+  margin-top: 0.8rem;
+}
+.product__additional--gray {
+  color: var(--gray);
+}
+.product__control {
+  padding-bottom: 3rem;
+  margin-top: 3rem;
+  border-bottom: solid 0.2rem var(--light-gray);
+}
+.product__quantity {
+  justify-content: center;
+  width: 7.4rem;
+  height: 7.4rem;
+  margin-right: 0.6rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  background-color: var(--light-gray);
+  border-radius: 0.5rem;
+}
+.product__input-wrapper {
+  flex-direction: column;
+  row-gap: 0.6rem;
+}
+.product__input-btn {
+  padding: 0.7rem 0.6rem 0.5rem;
+  font-size: 2rem;
+  background-color: var(--light-gray);
+  border: 0.1rem solid var(--light-gray);
+  border-radius: 0.5rem;
+}
+.product__input-btn.disable {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.product__input-btn:hover {
+  color: var(--green);
+}
+.product__btn {
+  padding: 2rem 5rem;
+  margin-left: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 2;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  background-color: var(--yellow);
+  color: var(--black);
+}
+.product__btn:hover {
+  color: var(--white);
+  background-color: var(--green);
+}

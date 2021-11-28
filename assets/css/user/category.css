@@ -57,33 +57,6 @@
 .product-category__label:hover {
   color: var(--green);
 }
-.product-popular__item {
-  justify-content: flex-start;
-}
-.product-popular__item ~ .product-popular__item {
-  margin-top: 2rem;
-}
-.product-popular__btn {
-  width: 10.6rem;
-  height: 10.4rem;
-}
-.product-popular__img {
-  width: 100%;
-  height: 100%;
-}
-.product-popular__desc {
-  margin-left: 2rem;
-}
-.product-popular__link {
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-}
-.product-popular__price {
-  color: var(--green);
-}
-.product-popular__link:hover {
-  color: var(--green);
-}
 .product__main {
   grid-area: main;
 }

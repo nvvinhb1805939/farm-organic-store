@@ -117,13 +117,28 @@
   line-height: 1.75;
   letter-spacing: 0.075em;
 }
-.heeader-cart__list {
+.header-cart__list {
   padding: var(--pd);
+  max-height: 30rem;
+  overflow-y: auto;
   border-top: 0.1rem solid var(--light-gray);
   border-bottom: 0.1rem solid var(--light-gray);
 }
 .header-cart__item ~ .header-cart__item {
   margin-top: 1.5rem;
+}
+.header-cart__item.center {
+  flex-direction: column;
+  justify-content: center;
+}
+.header-cart__img {
+  width: 24rem;
+  height: 18rem;
+}
+.header-cart__message {
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
 }
 .header-cart__right {
   margin-left: 2rem;
@@ -131,7 +146,7 @@
 .header-cart__name {
   margin-bottom: 1rem;
 }
-.header-cart__name:hover a {
+.header-cart__name a:hover {
   color: var(--green);
 }
 .header-cart__btn {
@@ -148,6 +163,9 @@
   margin: 0 1.5rem;
   font-size: 1.6rem;
   font-weight: 600;
+}
+.header-cart__price {
+  color: var(--gray);
 }
 .header-cart__bottom {
   justify-content: space-between;

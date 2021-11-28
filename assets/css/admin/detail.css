@@ -1,0 +1,32 @@
+@import url(../common/base.css);
+@import url(./aside.css);
+@import url(./main.css);
+
+.main-table {
+  text-align: center;
+}
+.main-table__total {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.main-table--vertical {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.main-table--vertical tr:first-of-type:hover {
+  background-color: var(--light-gray);
+}
+.main-table--vertical th,
+.main-table--vertical td {
+  padding: 1rem 5rem;
+  text-align: left;
+  border: 0.1rem solid var(--light-gray);
+  border-top: unset;
+}
+.main-table--vertical td {
+  border-left: unset;
+}
+.main-table--vertical .main-table__head,
+.main-table--vertical .main-table__data {
+  border-top: 0.1rem solid var(--light-gray);
+}

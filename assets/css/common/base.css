@@ -101,6 +101,11 @@ i {
   background-color: var(--light-gray);
   border-radius: 0.4rem;
 }
+.img-link__img {
+  width: 10rem;
+  height: 9rem;
+  object-fit: scale-down;
+}
 .img-link:hover .img-link__img {
   transform: scale(1.05);
 }
@@ -110,6 +115,13 @@ i {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   line-height: 1.18182;
+}
+.heading-3 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1.3333;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 .heading-4 {
   font-family: var(--second-font);

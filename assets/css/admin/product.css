@@ -13,11 +13,6 @@
   white-space: pre-wrap;
   overflow: hidden;
 }
-.main-table__img {
-  max-width: unset;
-  width: 10rem;
-  object-fit: cover;
-}
 /* ======================FORM======================*/
 .form__wrapper {
   width: 75%;

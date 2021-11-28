@@ -32,30 +32,7 @@ function getHashPassword($pwd)
 	return substr(md5(md5($pwd) . PRIVATE_KEY), 0, 12);
 }
 
-// function moveFile($key, $rootPath = "../../")
-// {
-// 	if (!isset($_FILES[$key]) || !isset($_FILES[$key]['name']) || $_FILES[$key]['name'] == '') {
-// 		return '';
-// 	}
-
-// 	$pathTemp = $_FILES[$key]["tmp_name"];
-
-// 	$filename = $_FILES[$key]['name'];
-// 	//filename -> remove special character, ..., ...
-
-// 	$newPath = "assets/photos/" . $filename;
-
-// 	move_uploaded_file($pathTemp, $rootPath . $newPath);
-
-// 	return $newPath;
-// }
-
-// function fixUrl($thumbnail, $rootPath = "../../")
-// {
-// 	if (stripos($thumbnail, 'http://') !== false || stripos($thumbnail, 'https://') !== false) {
-// 	} else {
-// 		$thumbnail = $rootPath . $thumbnail;
-// 	}
-
-// 	return $thumbnail;
-// }
+function redirectUrl($originUrl, $currentPath) {
+	$currentUrl = $currentPath . substr($originUrl, 6);
+	return $currentUrl;
+}

@@ -1,3 +1,12 @@
+<?php 
+  require_once('utils/util.php');
+  require_once('db/queries.php');
+
+  $product_id = $_GET['id'];
+  $query = "SELECT HangHoa.*, LoaiHangHoa.TenLoaiHang as category_name, HinhHangHoa.    TenHinh as url_img FROM LoaiHangHoa LEFT JOIN HangHoa ON HangHoa.MaLoaiHang = LoaiHangHoa.MaLoaiHang LEFT JOIN HinhHangHoa ON HangHoa.MSHH = HinhHangHoa.MSHH where HangHoa.MSHH = $product_id";
+  $item = getDataBySelect($query, true);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,81 +42,29 @@
             <ion-icon name="search-outline" class="header__icon search"></ion-icon>
           </button>
         </form>
-        <div class="header-cart" data-quantity="2">
+        <div class="header-cart" data-quantity="0">
           <button class="header__btn cart btn">
             <ion-icon name="cart-outline" class="header__icon cart"></ion-icon>
           </button>
           <div class="header-cart__wrapper">
             <div class="header-cart__header">
               <h5 class="header-cart__h5">
-                <span class="header-cart__amount">2</span>
+                <span class="header-cart__amount">0</span>
                 Sản Phẩm Trong Giỏ Hàng
               </h5>
               <h6 class="header-cart__h6">
                 Tổng Cộng:
-                <span class="header-cart__total">45000</span>
+                <span class="header-cart__total">0 VNĐ</span>
               </h6>
             </div>
-            <ul class="heeader-cart__list">
-              <li class="header-cart__item flex" data-price="30000">
-                <div class="header-cart__left">
-                  <a href="#" class="img-link">
-                    <img
-                      src="./assets/img/product_orange.png"
-                      alt="img"
-                      class="img-link__img"
-                    />
-                  </a>
-                </div>
-                <div class="header-cart__right">
-                  <h6 class="header-cart__name header-cart__h6">
-                    <a href="#">Cam</a>
-                  </h6>
-                  <div class="header-cart__control flex">
-                    <button class="header-cart__btn decrease btn">
-                      <ion-icon name="remove-outline"></ion-icon>
-                    </button>
-                    <span class="header-cart__number header-cart__quantity"
-                      >1</span
-                    >
-                    <button class="header-cart__btn increase btn">
-                      <ion-icon name="add-outline"></ion-icon>
-                    </button>
-                    <span class="header-cart__number header-cart__price"
-                      >30000</span
-                    >
-                  </div>
-                </div>
-              </li>
-              <li class="header-cart__item flex" data-price="15000">
-                <div class="header-cart__left">
-                  <a href="#" class="img-link">
-                    <img
-                      src="./assets/img/product_banana--mini.png"
-                      alt="img"
-                      class="img-link__img"
-                    />
-                  </a>
-                </div>
-                <div class="header-cart__right">
-                  <h6 class="header-cart__name header-cart__h6">
-                    <a href="#">Chuối</a>
-                  </h6>
-                  <div class="header-cart__control flex">
-                    <button class="header-cart__btn decrease btn">
-                      <ion-icon name="remove-outline"></ion-icon>
-                    </button>
-                    <span class="header-cart__number header-cart__quantity"
-                      >1</span
-                    >
-                    <button class="header-cart__btn increase btn">
-                      <ion-icon name="add-outline"></ion-icon>
-                    </button>
-                    <span class="header-cart__number header-cart__price"
-                      >15000</span
-                    >
-                  </div>
-                </div>
+            <ul class="header-cart__list">
+              <li class="header-cart__item flex center empty">
+                <img class="header-cart__img" src="./assets/img/empty_cart.png" alt="img">
+                <p class="header-cart__message">
+                  Chưa có sản phẩm trong giỏ hàng.
+                  <br>
+                  Vui lòng chọn sản phẩm để thanh toán!
+                </p>
               </li>
             </ul>
             <div class="header-cart__bottom flex">
@@ -125,6 +82,46 @@
   </header>
   <section class="hero mt-header" style="background-image: url('./assets/img/product_hero.jpg');">
     <h2 class="hero__heading heading-2">Chi Tiết Sản Phẩm</h2>
+  </section>
+  <section class="product container grid">
+    <?php 
+      echo '
+        <input class="product__id" type="hidden" name="product__id" value="'.$item['MSHH'].'">
+        <div class="product__left">
+          <img src="'.redirectUrl($item['url_img'], "./").'" alt="img" class="product__img">
+        </div>
+        <div class="product__right">
+          <div class="product__info">
+            <h3 class="product__name heading-3">'.$item['TenHH'].'</h3>
+            <p class="product__price">'.number_format($item['Gia'], 0, ".", ".").' VNĐ</p>
+            <input class="product__price-input" type="hidden" name="product__price" value="'.$item['Gia'].'">
+            <p class="product__desc">'.nl2br($item['QuyCach']).'</p>
+            <p class="product__additional">
+              Danh mục:
+              <span class="product__additional--gray">'.$item['category_name'].'</span>
+            </p>
+            <p class="product__additional">
+              Kho:
+              <span class="product__additional--gray">'.$item['SoLuongHang'].'</span>
+            </p>
+          </div>
+          <div class="product__control flex">
+            <div class="product__input flex">
+              <span class="product__quantity flex">1</span>
+              <div class="product__input-wrapper flex">
+                <button class="product__input-btn increase btn">
+                  <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <button class="product__input-btn disable decrease btn">
+                  <ion-icon name="remove-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <button class="product__btn btn">Thêm vào giỏ hàng</button>
+          </div>
+        </div>
+      ';
+    ?>
   </section>
   <footer class="footer">
     <div class="footer__top container grid">
@@ -170,6 +167,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/user/main.js"></script>
+  <script src="./assets/js/user/detail.js"></script>
 
 </body>
 

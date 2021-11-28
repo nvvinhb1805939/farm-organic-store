@@ -11,7 +11,7 @@ if (!isset($_SESSION['user'])) {
 
 require_once('./addUpdate.php');
 
-$dataQuery = "SELECT HangHoa.*, LoaiHangHoa.TenLoaiHang as category_name, HinhHangHoa.    TenHinh as url_img FROM LoaiHangHoa LEFT JOIN HangHoa ON HangHoa.MaLoaiHang = LoaiHangHoa.MaLoaiHang LEFT JOIN HinhHangHoa ON HangHoa.MSHH = HinhHangHoa.MSHH where HangHoa.MaLoaiHang is not null";
+$dataQuery = "SELECT HangHoa.*, LoaiHangHoa.TenLoaiHang as category_name, HinhHangHoa.    TenHinh as url_img FROM LoaiHangHoa LEFT JOIN HangHoa ON HangHoa.MaLoaiHang = LoaiHangHoa.MaLoaiHang LEFT JOIN HinhHangHoa ON HangHoa.MSHH = HinhHangHoa.MSHH where HangHoa.MaLoaiHang is not null Order by HangHoa.MSHH";
 $data = getDataBySelect($dataQuery);
 $sql = "SELECT * From LoaiHangHoa";
 $categoryItems = getDataBySelect($sql);
@@ -102,6 +102,7 @@ $categoryItems = getDataBySelect($sql);
       <button class="main__btn no-mg main__btn--add btn circle-btn">
         <ion-icon name="add"></ion-icon>
       </button>
+      <span class="main__label">Tổng cộng: <?=count($data)?> dòng</span>
       <table class="main-table" width="100%">
         <tr>
           <th colspan="3">Sản Phẩm</th>

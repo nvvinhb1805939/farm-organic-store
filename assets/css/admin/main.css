@@ -16,6 +16,13 @@
   text-align: left;
   color: var(--green);
 }
+.main__label {
+  display: inline-block;
+  font-size: 1.6rem;
+  letter-spacing: 0.035em;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
 .main-nav {
   justify-content: space-between;
   position: relative;
@@ -115,6 +122,14 @@ th:first-of-type,
 td:first-of-type {
   text-align: center;
 }
+.main-table__img-wrapper {
+  text-align: center;
+}
+.main-table__img {
+  max-width: unset;
+  width: 10rem;
+  object-fit: cover;
+}
 .main__btn {
   margin: 0 auto;
 }
@@ -123,31 +138,43 @@ td:first-of-type {
   margin-right: 0;
 }
 .main__btn--add {
-  margin-bottom: 1rem;
-}
-.main__btn--add,
-.main__btn--edit {
+  margin-bottom: 2rem;
   color: var(--white);
   background-color: var(--green);
 }
-.main__btn--delete {
+.main__btn--edit {
   color: var(--black);
   background-color: var(--yellow);
 }
-.main__btn--add:hover,
-.main__btn--edit:hover {
+.main__btn--delete {
+  color: var(--white);
+  background-color: red;
+}
+.main__btn--search {
+  color: var(--white);
+  background-color: var(--black);
+}
+.main__btn--add:hover {
   color: var(--black);
   background-color: var(--yellow);
+}
+.main__btn--edit:hover {
+  color: var(--white);
+  background-color: var(--green);
 }
 .main__btn--edit:hover .main-table__icon {
-  color: var(--black);
+  color: var(--white);
 }
 .main__btn--delete:hover {
   color: var(--white);
-  background-color: var(--green);
+  background-color: var(--black);
 }
 .main__btn--delete:hover .main-table__icon {
   color: var(--white);
+}
+.main__btn--search:hover {
+  color: var(--white);
+  background-color: red;
 }
 .form__modal {
   cursor: pointer;

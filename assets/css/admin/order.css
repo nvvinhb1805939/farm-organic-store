@@ -3,12 +3,27 @@
 @import url(./form.css);
 @import url(./main.css);
 
+.main-table__id {
+  position: relative;
+}
+.main__btn--search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+}
+tr:hover .main__btn--search {
+  visibility: visible;
+  opacity: 1;
+}
 .main-table__status-txt {
   --height: 4rem;
   display: block;
   height: var(--height);
-  width: max-content;
   padding: 0 0.8rem;
+  white-space: nowrap;
   text-align: center;
   line-height: var(--height);
   border-radius: 0.5rem;

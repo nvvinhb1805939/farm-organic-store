@@ -1,3 +1,12 @@
+<?php
+  
+	require_once('utils/util.php');
+	require_once('db/queries.php');
+
+  $query = "select HangHoa.*, HinhHangHoa.TenHinh as url from HangHoa left join HinhHangHoa on HangHoa.MSHH = HinhHangHoa.MSHH order by HangHoa.MSHH desc limit 0,8";
+  $lastestItems = getDataBySelect($query);
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,81 +41,29 @@
               <ion-icon name="search-outline" class="header__icon search"></ion-icon>
             </button>
           </form>
-          <div class="header-cart" data-quantity="2">
+          <div class="header-cart" data-quantity="0">
             <button class="header__btn cart btn">
               <ion-icon name="cart-outline" class="header__icon cart"></ion-icon>
             </button>
             <div class="header-cart__wrapper">
               <div class="header-cart__header">
                 <h5 class="header-cart__h5">
-                  <span class="header-cart__amount">2</span>
+                  <span class="header-cart__amount">0</span>
                   Sản Phẩm Trong Giỏ Hàng
                 </h5>
                 <h6 class="header-cart__h6">
                   Tổng Cộng:
-                  <span class="header-cart__total">45000</span>
+                  <span class="header-cart__total">0 VNĐ</span>
                 </h6>
               </div>
-              <ul class="heeader-cart__list">
-                <li class="header-cart__item flex" data-price="30000">
-                  <div class="header-cart__left">
-                    <a href="#" class="img-link">
-                      <img
-                        src="./assets/img/product_orange.png"
-                        alt="img"
-                        class="img-link__img"
-                      />
-                    </a>
-                  </div>
-                  <div class="header-cart__right">
-                    <h6 class="header-cart__name header-cart__h6">
-                      <a href="#">Cam</a>
-                    </h6>
-                    <div class="header-cart__control flex">
-                      <button class="header-cart__btn decrease btn">
-                        <ion-icon name="remove-outline"></ion-icon>
-                      </button>
-                      <span class="header-cart__number header-cart__quantity"
-                        >1</span
-                      >
-                      <button class="header-cart__btn increase btn">
-                        <ion-icon name="add-outline"></ion-icon>
-                      </button>
-                      <span class="header-cart__number header-cart__price"
-                        >30000</span
-                      >
-                    </div>
-                  </div>
-                </li>
-                <li class="header-cart__item flex" data-price="15000">
-                  <div class="header-cart__left">
-                    <a href="#" class="img-link">
-                      <img
-                        src="./assets/img/product_banana--mini.png"
-                        alt="img"
-                        class="img-link__img"
-                      />
-                    </a>
-                  </div>
-                  <div class="header-cart__right">
-                    <h6 class="header-cart__name header-cart__h6">
-                      <a href="#">Chuối</a>
-                    </h6>
-                    <div class="header-cart__control flex">
-                      <button class="header-cart__btn decrease btn">
-                        <ion-icon name="remove-outline"></ion-icon>
-                      </button>
-                      <span class="header-cart__number header-cart__quantity"
-                        >1</span
-                      >
-                      <button class="header-cart__btn increase btn">
-                        <ion-icon name="add-outline"></ion-icon>
-                      </button>
-                      <span class="header-cart__number header-cart__price"
-                        >15000</span
-                      >
-                    </div>
-                  </div>
+              <ul class="header-cart__list">
+                <li class="header-cart__item flex center empty">
+                  <img class="header-cart__img" src="./assets/img/empty_cart.png" alt="img">
+                  <p class="header-cart__message">
+                    Chưa có sản phẩm trong giỏ hàng.
+                    <br>
+                    Vui lòng chọn sản phẩm để thanh toán!
+                  </p>
                 </li>
               </ul>
               <div class="header-cart__bottom flex">
@@ -132,7 +89,7 @@
             Chào mừng đến với Farm Organic Store
           </h4>
           <h1 class="slider__heading">Sản Phẩm</h1>
-          <h3 class="slider__slogan">Tăng Trưởng Gắn Liền Với Tình Yêu</h3>
+          <h3 class="slider__slogan heading-3">Tăng Trưởng Gắn Liền Với Tình Yêu</h3>
         </div>
         <a href="./category.php" class="slider__link">Mua Ngay</a>
       </div>
@@ -173,150 +130,21 @@
         <h2 class="product__heading heading-2">Sản Phẩm Mới</h2>
       </div>
       <div class="product__list grid">
-        <div class="product__item flex">
-          <span class="product__label product__label--sale">Sale</span>
-          <img
-            src="./assets/img/product_banana.png"
-            alt="img"
-            class="product__img"
-          />
-          <div class="product__content">
-            <h5 class="product__name">Chuối</h5>
-            <div class="product-price__container">
-              <span class="product__price--old">20.000</span>
-              <span class="product__price--new">15.000</span>
-            </div>
-          </div>
-          <a href="#" class="product__btn btn circle-btn">
-            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-          </a>
-        </div>
-        <div class="product__item flex">
-          <span class="product__label product__label--new">New</span>
-          <img
-            src="./assets/img/product_bread.png"
-            alt="img"
-            class="product__img"
-          />
-          <div class="product__content">
-            <h5 class="product__name">Chuối</h5>
-            <div class="product-price__container">
-              <span class="product__price--old">20.000</span>
-              <span class="product__price--new">15.000</span>
-            </div>
-          </div>
-          <a href="#" class="product__btn btn circle-btn">
-            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-          </a>
-        </div>
-        <div class="product__item flex">
-          <span class="product__label product__label--sale">Sale</span>
-          <img
-            src="./assets/img/product_bread.png"
-            alt="img"
-            class="product__img"
-          />
-          <div class="product__content">
-            <h5 class="product__name">Chuối</h5>
-            <div class="product-price__container">
-              <span class="product__price--old">20.000</span>
-              <span class="product__price--new">15.000</span>
-            </div>
-          </div>
-          <a href="#" class="product__btn btn circle-btn">
-            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-          </a>
-        </div>
-        <div class="product__item flex">
-          <span class="product__label product__label--sale">Sale</span>
-          <img
-            src="./assets/img/product_bread.png"
-            alt="img"
-            class="product__img"
-          />
-          <div class="product__content">
-            <h5 class="product__name">Chuối</h5>
-            <div class="product-price__container">
-              <span class="product__price--old">20.000</span>
-              <span class="product__price--new">15.000</span>
-            </div>
-          </div>
-          <a href="#" class="product__btn btn circle-btn">
-            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-          </a>
-        </div>
-        <div class="product__item flex">
-          <span class="product__label product__label--sale">Sale</span>
-          <img
-            src="./assets/img/product_bread.png"
-            alt="img"
-            class="product__img"
-          />
-          <div class="product__content">
-            <h5 class="product__name">Chuối</h5>
-            <div class="product-price__container">
-              <span class="product__price--old">20.000</span>
-              <span class="product__price--new">15.000</span>
-            </div>
-          </div>
-          <a href="#" class="product__btn btn circle-btn">
-            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-          </a>
-        </div>
-        <div class="product__item flex">
-          <span class="product__label product__label--sale">Sale</span>
-          <img
-            src="./assets/img/product_bread.png"
-            alt="img"
-            class="product__img"
-          />
-          <div class="product__content">
-            <h5 class="product__name">Chuối</h5>
-            <div class="product-price__container">
-              <span class="product__price--old">20.000</span>
-              <span class="product__price--new">15.000</span>
-            </div>
-          </div>
-          <a href="#" class="product__btn btn circle-btn">
-            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-          </a>
-        </div>
-        <div class="product__item flex">
-          <span class="product__label product__label--sale">Sale</span>
-          <img
-            src="./assets/img/product_bread.png"
-            alt="img"
-            class="product__img"
-          />
-          <div class="product__content">
-            <h5 class="product__name">Chuối</h5>
-            <div class="product-price__container">
-              <span class="product__price--old">20.000</span>
-              <span class="product__price--new">15.000</span>
-            </div>
-          </div>
-          <a href="#" class="product__btn btn circle-btn">
-            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-          </a>
-        </div>
-        <div class="product__item flex">
-          <span class="product__label product__label--sale">Sale</span>
-          <img
-            src="./assets/img/product_bread.png"
-            alt="img"
-            class="product__img"
-          />
-          <div class="product__content">
-            <h5 class="product__name">Chuối</h5>
-            <div class="product-price__container">
-              <span class="product__price--old">20.000</span>
-              <span class="product__price--new">15.000</span>
-            </div>
-          </div>
-          <a href="#" class="product__btn btn circle-btn">
-            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-          </a>
-        </div>
+        <?php
+          foreach($lastestItems as $item) {
+            echo '
+                <div class="product__item flex">
+                  <img src="'.redirectUrl($item['url'], "./").'" alt="img" class="product__img"/>
+                  <div class="product__content">
+                    <h5 class="product__name">'.$item['TenHH'].'</h5>
+                    <span class="product__price">'.number_format($item['Gia'], 0, ".", ".").' VNĐ</span>
+                  </div>
+                  <a href="./detail.php?id='.$item['MSHH'].'" class="product__btn btn circle-btn">
+                    <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+                  </a>
+                </div>';
+          }
+        ?>
       </div>
       <a href="./category.php" class="product__link">
         Xem Thêm

@@ -29,10 +29,9 @@ const formElement = document.querySelector(".form"),
   productUrlInput = document.querySelector('.form__input[name="url"]');
 /*==============================EVENTS & FUNCTIONS==============================*/
 /*-------------Change Img When Change Img File-------------*/
-productImgInput.oninput = event => {
+productImgInput.onchange = event => {
   const path = "../../assets/img/";
-  const url = event.target.value.split("\\");
-  const fileName = url[url.length - 1];
+  const fileName = event.target.value.split("\\").pop();
   const dataUrl = `${path}${fileName}`;
   formImg.src = dataUrl;
   productUrlInput.value = dataUrl;
@@ -153,24 +152,28 @@ function validateQuantity() {
     return false;
   } else return true;
 }
-function validateImg() {
-  if (
-    formImg.src == "" ||
-    formImg.src == "http://localhost:8080/b1805939_NVV/admin/product/"
-  ) {
-    main.formMessage.innerText = "Vui lòng chọn hình ảnh!";
-    productImgInput.focus();
-    return false;
-  } else {
-    return true;
-  }
-}
+// function validateImg() {
+//   const regex = /^\.\.\/\.\.\/assets\/img\/\w+\.png$/;
+//   if (
+//     false
+//     // productUrlInput.value == "".trim() ||
+//     // productUrlInput.value ==
+//     //   "http://localhost:8080/b1805939_NVV/assets/img/".trim() ||
+//     // productUrlInput.value == "../../assets/img/".trim()
+//   ) {
+//     main.formMessage.innerText = "Vui lòng chọn hình ảnh!";
+//     productImgInput.focus();
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
 function validateFormProductInfo() {
   if (!validateName()) return false;
   if (!validateCategory()) return false;
   if (!validatePrice()) return false;
   if (!validateQuantity()) return false;
-  if (!validateImg()) return false;
+  // if (!validateImg()) return false;
   if (
     main.findDuplicateField(
       main.getTableDatas(productNames),

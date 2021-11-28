@@ -99,6 +99,7 @@ $data = getDataBySelect($queryData);
       <button class="main__btn no-mg main__btn--add btn circle-btn">
         <ion-icon name="add"></ion-icon>
       </button>
+      <span class="main__label">Tổng cộng: <?=count($data)?> dòng</span>
       <table class="main-table" width="100%">
         <tr>
           <th colspan="2">Danh Mục</th>
