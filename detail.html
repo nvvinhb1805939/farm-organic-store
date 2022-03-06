@@ -5,25 +5,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thanh Toán</title>
+  <title>Chi Tiết Sản Phẩm</title>
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/user/checkout.css">
+  <link rel="stylesheet" href="./assets/css/user/detail.css">
 </head>
 
 <body>
-  <header class="header"> 
+  <header class="header">
     <div class="header__container container flex">
-      <a href="./index.php" class="logo">
+      <a href="./index.html" class="logo">
         <img src="./assets/img/logo.png" alt="" class="logo__img" />
       </a>
       <nav class="header-nav">
-        <a href="./index.php" class="header-nav__link">Trang Chủ</a>
-        <a href="./category.php" class="header-nav__link">Sản Phẩm</a>
-        <a href="./cart.php" class="header-nav__link">Giỏ Hàng</a>
-        <a href="./checkout.php" class="header-nav__link active">Thanh Toán</a>
+        <a href="./index.html" class="header-nav__link">Trang Chủ</a>
+        <a href="./category.html" class="header-nav__link active">Sản Phẩm</a>
+        <a href="./cart.html" class="header-nav__link">Giỏ Hàng</a>
+        <a href="./checkout.html" class="header-nav__link">Thanh Toán</a>
       </nav>
       <div class="header__user flex">
-        <form action="./search.php" class="header__form flex" method="post">
+        <form action="./search.html" class="header__form flex" method="post">
           <input
             class="header__input"
             type="text"
@@ -59,10 +59,10 @@
               </li>
             </ul>
             <div class="header-cart__bottom flex">
-              <a href="./cart.php" class="header-cart__click view"
+              <a href="./cart.html" class="header-cart__click view"
                 >Giỏ Hàng</a
               >
-              <a href="./checkout.php" class="header-cart__click checkout"
+              <a href="./checkout.html" class="header-cart__click checkout"
                 >Thanh Toán</a
               >
             </div>
@@ -72,12 +72,51 @@
     </div>
   </header>
   <section class="hero mt-header" style="background-image: url('./assets/img/product_hero.jpg');">
-    <h2 class="hero__heading heading-2">Thanh Toán</h2>
+    <h2 class="hero__heading heading-2">Chi Tiết Sản Phẩm</h2>
+  </section>
+  <section class="product container grid">
+    <div class="product__left">
+      <img src="./assets/img/product_banana.png" alt="img" class="product__img">
+    </div>
+    <div class="product__right">
+      <div class="product__info">
+        <h3 class="product__name heading-3">Banana</h3>
+        <p class="product__price">20.000 VNĐ</p>
+        <p class="product__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores eligendi consectetur, dolorum minus expedita modi tenetur iusto vero id, maxime error dolor atque quod molestias! Esse quo nulla maiores laudantium.
+        Reprehenderit, iure. Libero, vitae doloremque in iste cumque quia consequuntur ipsa repellendus, est ad soluta, incidunt ex. Cumque repellat blanditiis exercitationem deserunt voluptatem, reiciendis, similique voluptas fuga repudiandae officia nisi?
+        Veritatis, esse doloribus? Eum accusamus ipsam incidunt adipisci culpa officiis maiores quam saepe dolor magnam quas modi corrupti illo, magni quo enim atque repellat delectus inventore vel ad consectetur provident?
+        Dolorum quos ipsa maxime obcaecati iure praesentium voluptates, et dolorem, mollitia recusandae corrupti velit laboriosam quidem, odit neque accusantium provident labore. Dignissimos impedit quis voluptates ipsa vero minima id ullam?
+        Adipisci in quasi unde odio iure alias nostrum dolorem, beatae voluptas natus tempora. Quas rem eligendi autem blanditiis architecto ex corporis ipsam, error nulla asperiores hic magni aspernatur. At, enim.
+        Obcaecati, facilis saepe deserunt repellendus quibusdam eveniet quam vitae alias non consequatur a! Natus deserunt vel temporibus voluptatem iusto reprehenderit cum assumenda, minima atque sit ab, perferendis accusantium dolores veniam.</p>
+        <p class="product__additional">
+          Danh mục:
+          <span class="product__additional--gray">Trái cây</span>
+        </p>
+        <p class="product__additional">
+          Kho:
+          <span class="product__additional--gray">294</span>
+        </p>
+      </div>
+      <div class="product__control flex">
+        <div class="product__input flex">
+          <span class="product__quantity flex">1</span>
+          <div class="product__input-wrapper flex">
+            <button class="product__input-btn increase btn">
+              <ion-icon name="add-outline"></ion-icon>
+            </button>
+            <button class="product__input-btn disable decrease btn">
+              <ion-icon name="remove-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <button class="product__btn btn">Thêm vào giỏ hàng</button>
+      </div>
+    </div>
   </section>
   <footer class="footer">
     <div class="footer__top container grid">
       <div class="footer__schedule">
-        <a href="./index.php" class="logo">
+        <a href="./index.html" class="logo">
           <img class="" src="./assets/img/logo.png" alt="logo__img" />
         </a>
         <div class="footer__time">
@@ -118,6 +157,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/user/main.js"></script>
+  <script src="./assets/js/user/detail.js"></script>
 
 </body>
 

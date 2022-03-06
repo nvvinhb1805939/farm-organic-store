@@ -32,7 +32,7 @@ tr:hover .main__btn--search {
   color: var(--white);
   background-color: var(--gray);
 }
-.main-table__status-txt.repare {
+.main-table__status-txt.prepare {
   color: var(--white);
   background-color: var(--black);
 }

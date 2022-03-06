@@ -91,7 +91,7 @@
 }
 .header-cart__wrapper::before {
   --size: 2rem;
-  content: "";
+  content: '';
   position: absolute;
   top: calc(-1 * var(--size) / 2);
   transform: rotate(45deg);
@@ -123,6 +123,7 @@
   overflow-y: auto;
   border-top: 0.1rem solid var(--light-gray);
   border-bottom: 0.1rem solid var(--light-gray);
+  border-radius: inherit;
 }
 .header-cart__item ~ .header-cart__item {
   margin-top: 1.5rem;

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Đơn Hàng</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../assets/css/admin/order.css" />
+  </head>
+
+  <body>
+    <aside class="aside">
+      <div class="aside__logo">
+        <a href="#" class="logo">
+          <img src="../../assets/img/logo.png" alt="img" class="logo__img" />
+        </a>
+      </div>
+      <nav class="aside__nav">
+        <a href="./" class="aside__link active flex">
+          <span></span>
+          <span></span>
+          <ion-icon name="bag-handle" class="aside__icon"></ion-icon>
+          Đơn Hàng
+        </a>
+        <a href="../staff" class="aside__link flex">
+          <span></span>
+          <span></span>
+          <ion-icon name="person" class="aside__icon"></ion-icon>
+          Nhân Viên
+        </a>
+        <a href="../category" class="aside__link flex">
+          <span></span>
+          <span></span>
+          <ion-icon name="apps" class="aside__icon"></ion-icon>
+          Danh Mục
+        </a>
+        <a href="../product" class="aside__link flex">
+          <span></span>
+          <span></span>
+          <ion-icon name="fast-food" class="aside__icon"></ion-icon>
+          Sản Phẩm
+        </a>
+      </nav>
+    </aside>
+    <main class="main">
+      <nav class="main-nav main__wrapper flex">
+        <button class="main-nav__btn btn circle-btn">
+          <ion-icon name="chevron-back" class="main-nav__icon"></ion-icon>
+        </button>
+        <div class="main-nav__avt btn circle-btn">
+          <img src="../../assets/img/avt1.jpg" alt="avt" class="main-nav__img" />
+        </div>
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <span class="main-nav__message">Xin chào, Nguyễn Văn Vinh</span>
+          </li>
+          <li class="main-nav__item">
+            <a href="../auth/" class="main-nav__link btn">
+              <ion-icon name="power" class="main-nav__icon"></ion-icon>
+              Đăng Xuất
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="main__wrapper">
+        <h2 class="main__heading">Quản Lý Đơn Hàng</h2>
+        <span class="main__label">Tổng cộng: 4 dòng</span>
+        <table class="main-table" width="100%">
+          <tr>
+            <th>Số ĐH</th>
+            <th>Khách Hàng</th>
+            <th>Ngày Đặt</th>
+            <th>Ngày Giao</th>
+            <th>Trạng Thái</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr class="main-table__row">
+            <td class="main-table__id">
+              2
+              <a href="detail.html" class="main__btn main__btn--search btn circle-btn">
+                <ion-icon name="search" class="main-table__icon"></ion-icon>
+              </a>
+            </td>
+            <td class="main-table__name-customer">Nguyễn Văn A</td>
+            <td class="main-table__order-date">03/12/2021</td>
+            <td class="main-table__delivery-date"></td>
+            <td>
+              <span class="main-table__status-txt delivery">Đang giao hàng</span>
+            </td>
+            <td>
+              <button class="main__btn disable main__btn--edit btn circle-btn">
+                <ion-icon name="pencil" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+            <td>
+              <button class="main__btn disable main__btn--delete btn circle-btn">
+                <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="main-table__row">
+            <td class="main-table__id">
+              3
+              <a href="detail.html" class="main__btn main__btn--search btn circle-btn">
+                <ion-icon name="search" class="main-table__icon"></ion-icon>
+              </a>
+            </td>
+            <td class="main-table__name-customer">Nguyễn Văn A</td>
+            <td class="main-table__order-date">05/11/2021</td>
+            <td class="main-table__delivery-date"></td>
+            <td>
+              <span class="main-table__status-txt prepare">Đang chuẩn bị hàng</span>
+            </td>
+            <td>
+              <button class="main__btn main__btn--edit btn circle-btn">
+                <ion-icon name="pencil" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+            <td>
+              <button class="main__btn main__btn--delete btn circle-btn">
+                <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="main-table__row">
+            <td class="main-table__id">
+              4
+              <a href="detail.html" class="main__btn main__btn--search btn circle-btn">
+                <ion-icon name="search" class="main-table__icon"></ion-icon>
+              </a>
+            </td>
+            <td class="main-table__name-customer">Nguyễn Văn A</td>
+            <td class="main-table__order-date">26/11/2021</td>
+            <td class="main-table__delivery-date"></td>
+            <td>
+              <span class="main-table__status-txt pending">Chờ xác nhận</span>
+            </td>
+            <td>
+              <button class="main__btn main__btn--edit btn circle-btn">
+                <ion-icon name="pencil" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+            <td>
+              <button class="main__btn main__btn--delete btn circle-btn">
+                <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="main-table__row">
+            <td class="main-table__id">
+              1
+              <a href="detail.html" class="main__btn main__btn--search btn circle-btn">
+                <ion-icon name="search" class="main-table__icon"></ion-icon>
+              </a>
+            </td>
+            <td class="main-table__name-customer">Nguyễn Văn A</td>
+            <td class="main-table__order-date">30/11/2021</td>
+            <td class="main-table__delivery-date">02/12/2021</td>
+            <td>
+              <span class="main-table__status-txt success">Đã giao hàng</span>
+            </td>
+            <td>
+              <button class="main__btn disable main__btn--edit btn circle-btn">
+                <ion-icon name="pencil" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+            <td>
+              <button class="main__btn disable main__btn--delete btn circle-btn">
+                <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="main-table__row">
+            <td class="main-table__id">
+              5
+              <a href="detail.html" class="main__btn main__btn--search btn circle-btn">
+                <ion-icon name="search" class="main-table__icon"></ion-icon>
+              </a>
+            </td>
+            <td class="main-table__name-customer">Nguyễn Văn A</td>
+            <td class="main-table__order-date">11/11/2021</td>
+            <td class="main-table__delivery-date"></td>
+            <td>
+              <span class="main-table__status-txt cancel">Đã huỷ</span>
+            </td>
+            <td>
+              <button class="main__btn disable main__btn--edit btn circle-btn">
+                <ion-icon name="pencil" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+            <td>
+              <button class="main__btn disable main__btn--delete btn circle-btn">
+                <ion-icon name="trash-outline" class="main-table__icon"></ion-icon>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="../../assets/js/admin/order.js"></script>
+  </body>
+</html>

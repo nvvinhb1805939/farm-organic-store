@@ -1,12 +1,3 @@
-<?php
-  
-	require_once('utils/util.php');
-	require_once('db/queries.php');
-
-  $query = "select HangHoa.*, HinhHangHoa.TenHinh as url from HangHoa left join HinhHangHoa on HangHoa.MSHH = HinhHangHoa.MSHH order by HangHoa.MSHH desc limit 0,8";
-  $lastestItems = getDataBySelect($query);
-  
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,17 +12,17 @@
   <body>
     <header class="header">
       <div class="header__container container flex">
-        <a href="./index.php" class="logo">
+        <a href="./index.html" class="logo">
           <img src="./assets/img/logo.png" alt="" class="logo__img" />
         </a>
         <nav class="header-nav">
-          <a href="./index.php" class="header-nav__link active">Trang Chủ</a>
-          <a href="./category.php" class="header-nav__link">Sản Phẩm</a>
-          <a href="./cart.php" class="header-nav__link">Giỏ Hàng</a>
-          <a href="./checkout.php" class="header-nav__link">Thanh Toán</a>
+          <a href="./index.html" class="header-nav__link active">Trang Chủ</a>
+          <a href="./category.html" class="header-nav__link">Sản Phẩm</a>
+          <a href="./cart.html" class="header-nav__link">Giỏ Hàng</a>
+          <a href="./checkout.html" class="header-nav__link">Thanh Toán</a>
         </nav>
         <div class="header__user flex">
-          <form action="./search.php" class="header__form flex" method="post">
+          <form action="./search.html" class="header__form flex" method="post">
             <input
               class="header__input"
               type="text"
@@ -67,10 +58,10 @@
                 </li>
               </ul>
               <div class="header-cart__bottom flex">
-                <a href="./cart.php" class="header-cart__click view"
+                <a href="./cart.html" class="header-cart__click view"
                   >Giỏ Hàng</a
                 >
-                <a href="./checkout.php" class="header-cart__click checkout"
+                <a href="./checkout.html" class="header-cart__click checkout"
                   >Thanh Toán</a
                 >
               </div>
@@ -91,7 +82,7 @@
           <h1 class="slider__heading">Sản Phẩm</h1>
           <h3 class="slider__slogan heading-3">Tăng Trưởng Gắn Liền Với Tình Yêu</h3>
         </div>
-        <a href="./category.php" class="slider__link">Mua Ngay</a>
+        <a href="./category.html" class="slider__link">Mua Ngay</a>
       </div>
       <div
         class="slider__item"
@@ -104,7 +95,7 @@
           <h1 class="slider__heading">Rau Củ</h1>
           <h3 class="slider__slogan">Không Chất Phụ Gia Có Hại</h3>
         </div>
-        <a href="./category.php" class="slider__link">Mua Ngay</a>
+        <a href="./category.html" class="slider__link">Mua Ngay</a>
       </div>
       <div
         class="slider__item"
@@ -115,7 +106,7 @@
           <h1 class="slider__heading">Trái Cây</h1>
           <h3 class="slider__slogan">Với Nhiều Vitamin</h3>
         </div>
-        <a href="./category.php" class="slider__link">Mua Ngay</a>
+        <a href="./category.html" class="slider__link">Mua Ngay</a>
       </div>
       <button class="slider__btn slider__btn--prev btn__redirect disable btn circle-btn">
         <ion-icon name="chevron-back-outline" class="slider__icon"></ion-icon>
@@ -130,23 +121,118 @@
         <h2 class="product__heading heading-2">Sản Phẩm Mới</h2>
       </div>
       <div class="product__list grid">
-        <?php
-          foreach($lastestItems as $item) {
-            echo '
-                <div class="product__item flex">
-                  <img src="'.redirectUrl($item['url'], "./").'" alt="img" class="product__img"/>
-                  <div class="product__content">
-                    <h5 class="product__name">'.$item['TenHH'].'</h5>
-                    <span class="product__price">'.number_format($item['Gia'], 0, ".", ".").' VNĐ</span>
-                  </div>
-                  <a href="./detail.php?id='.$item['MSHH'].'" class="product__btn btn circle-btn">
-                    <ion-icon name="search-outline" class="product__icon search"></ion-icon>
-                  </a>
-                </div>';
-          }
-        ?>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
+        <div class="product__item flex">
+          <img src="./assets/img/product_banana.png" alt="img" class="product__img"/>
+          <div class="product__content">
+            <h5 class="product__name">Banana</h5>
+            <span class="product__price">20.000 VNĐ</span>
+          </div>
+          <a href="./detail.html" class="product__btn btn circle-btn">
+            <ion-icon name="search-outline" class="product__icon search"></ion-icon>
+          </a>
+        </div>
       </div>
-      <a href="./category.php" class="product__link">
+      <a href="./category.html" class="product__link">
         Xem Thêm
         <ion-icon name="chevron-forward-outline" class="product__icon more"></ion-icon>
       </a>
@@ -154,7 +240,7 @@
     <footer class="footer">
       <div class="footer__top container grid">
         <div class="footer__schedule">
-          <a href="./index.php" class="logo">
+          <a href="./index.html" class="logo">
             <img class="" src="./assets/img/logo.png" alt="logo__img" />
           </a>
           <div class="footer__time">

@@ -5,37 +5,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giỏ Hàng</title>
+  <title>Tìm Kiếm</title>
   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/user/cart.css">
+  <link rel="stylesheet" href="./assets/css/user/search.css">
 </head>
 
 <body>
   <header class="header">
     <div class="header__container container flex">
-      <a href="./index.php" class="logo">
-        <img src="./assets/img/logo.png" alt="" class="logo__img" />
+      <a href="./index.html" class="logo">
+        <img src="./assets/img/logo.png" alt="" class="logo__img">
       </a>
       <nav class="header-nav">
-        <a href="./index.php" class="header-nav__link">Trang Chủ</a>
-        <a href="./category.php" class="header-nav__link">Sản Phẩm</a>
-        <a href="./cart.php" class="header-nav__link active">Giỏ Hàng</a>
-        <a href="./checkout.php" class="header-nav__link">Thanh Toán</a>
+        <a href="./index.html" class="header-nav__link active">Trang Chủ</a>
+        <a href="./category.html" class="header-nav__link">Sản Phẩm</a>
+        <a href="./cart.html" class="header-nav__link">Giỏ Hàng</a>
+        <a href="./checkout.html" class="header-nav__link">Thanh Toán</a>
       </nav>
       <div class="header__user flex">
-        <form action="./search.php" class="header__form flex" method="post">
-          <input
-            class="header__input"
-            type="text"
-            placeholder="Tìm kiếm sản phẩm"
-          />
-          <button class="header__btn search btn">
-            <ion-icon name="search-outline" class="header__icon search"></ion-icon>
+        <form action="./search.html" class="header__form flex" method="post">
+          <input class="header__input" type="text" placeholder="Tìm kiếm sản phẩm">
+          <button class="header__btn search">
+            <i class="far fa-search header__icon search"></i>
           </button>
         </form>
         <div class="header-cart" data-quantity="0">
-          <button class="header__btn cart btn">
-            <ion-icon name="cart-outline" class="header__icon cart"></ion-icon>
+          <button class="header__btn cart">
+            <i class="far fa-shopping-cart header__icon cart"></i>
           </button>
           <div class="header-cart__wrapper">
             <div class="header-cart__header">
@@ -59,10 +55,10 @@
               </li>
             </ul>
             <div class="header-cart__bottom flex">
-              <a href="./cart.php" class="header-cart__click view"
+              <a href="./cart.html" class="header-cart__click view"
                 >Giỏ Hàng</a
               >
-              <a href="./checkout.php" class="header-cart__click checkout"
+              <a href="./checkout.html" class="header-cart__click checkout"
                 >Thanh Toán</a
               >
             </div>
@@ -72,49 +68,12 @@
     </div>
   </header>
   <section class="hero mt-header" style="background-image: url('./assets/img/product_hero.jpg');">
-    <h2 class="hero__heading heading-2">Giỏ Hàng</h2>
+    <h2 class="hero__heading heading-2">Tìm Kiếm</h2>
   </section>
-  <main class="cart container">
-    <table class="cart__table">
-      <thead>
-        <tr>
-          <th>Tên Sản Phẩm</th>
-          <th>Giá</th>
-          <th>Số Lượng</th>
-          <th>Tổng Cộng</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <a class="cart__link" href="./single-product.php">
-              <img src="./assets/img/product_banana--mini.png" alt="img" width="146" height="132">
-            </a>
-            <a class="cart_link" href="./single-product.php">Cam</a>
-          </td>
-          <td>30.000</td>
-          <td>
-
-          </td>
-          <td>$20</td>
-        </tr>
-        <tr>
-          <td><a class="table-cart-figure" href="single-product.html"><img src="images/product-mini-5-146x132.png" alt="" width="146" height="132"></a><a class="table-cart-link" href="single-product.html">Bananas</a></td>
-          <td>$23.00</td>
-          <td>
-            <div class="table-cart-stepper">
-              <div class="stepper "><input class="form-input stepper-input" type="number" data-zeros="true" value="1" min="1" max="1000"><span class="stepper-arrow up"></span><span class="stepper-arrow down"></span></div>
-            </div>
-          </td>
-          <td>$23</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
   <footer class="footer">
     <div class="footer__top container grid">
       <div class="footer__schedule">
-        <a href="./index.php" class="logo">
+        <a href="./index.html" class="logo">
           <img class="" src="./assets/img/logo.png" alt="logo__img" />
         </a>
         <div class="footer__time">

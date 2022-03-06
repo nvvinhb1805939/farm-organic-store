@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi Tiết Đơn Hàng</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../assets/css/admin/detail.css" />
+  </head>
+
+  <body>
+    <aside class="aside">
+      <div class="aside__logo">
+        <a href="#" class="logo">
+          <img src="../../assets/img/logo.png" alt="img" class="logo__img" />
+        </a>
+      </div>
+      <nav class="aside__nav">
+        <a href="./" class="aside__link active flex">
+          <span></span>
+          <span></span>
+          <ion-icon name="bag-handle" class="aside__icon"></ion-icon>
+          Đơn Hàng
+        </a>
+        <a href="../staff" class="aside__link flex">
+          <span></span>
+          <span></span>
+          <ion-icon name="person" class="aside__icon"></ion-icon>
+          Nhân Viên
+        </a>
+        <a href="../category" class="aside__link flex">
+          <span></span>
+          <span></span>
+          <ion-icon name="apps" class="aside__icon"></ion-icon>
+          Danh Mục
+        </a>
+        <a href="../product" class="aside__link flex">
+          <span></span>
+          <span></span>
+          <ion-icon name="fast-food" class="aside__icon"></ion-icon>
+          Sản Phẩm
+        </a>
+      </nav>
+    </aside>
+    <main class="main">
+      <nav class="main-nav main__wrapper flex">
+        <button class="main-nav__btn btn circle-btn">
+          <ion-icon name="chevron-back" class="main-nav__icon"></ion-icon>
+        </button>
+        <div class="main-nav__avt btn circle-btn">
+          <img src="../../assets/img/avt1.jpg" alt="avt" class="main-nav__img" />
+        </div>
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <span class="main-nav__message">Xin chào, Nguyễn Văn Vinh</span>
+          </li>
+          <li class="main-nav__item">
+            <a href="../auth/logout.php" class="main-nav__link btn">
+              <ion-icon name="power" class="main-nav__icon"></ion-icon>
+              Đăng Xuất
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="main__wrapper">
+        <h2 class="main__heading">Chi Tiết Đơn Hàng</h2>
+        <table class="main-table main-table--vertical" width="100%">
+          <tr>
+            <th class="main-table__head">Số Đơn Hàng</th>
+            <td class="main-table__data">1</td>
+          </tr>
+          <tr>
+            <th>Mã Số Khách Hàng</th>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th>Họ Tên Khách Hàng</th>
+            <td>Nguyễn Văn A</td>
+          </tr>
+          <tr>
+            <th>Số Điện Thoại</th>
+            <td>0123456987</td>
+          </tr>
+          <tr>
+            <th>Địa Chỉ</th>
+            <td>3/2, Xuân Khánh, Ninh Kiều, Cần Thơ</td>
+          </tr>
+          <tr>
+            <th>Mã Số Nhân Viên</th>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th>Họ Tên Nhân Viên</th>
+            <td>Nguyễn Văn Vinh</td>
+          </tr>
+          <tr>
+            <th>Số Điện Thoại</th>
+            <td>0857399180</td>
+          </tr>
+          <tr>
+            <th>Ngày Đặt Hàng</th>
+            <td>30/11/2021</td>
+          </tr>
+          <tr>
+            <th>Ngày Giao Hàng</th>
+            <td>02/12/2021</td>
+          </tr>
+          <tr>
+            <th>Trạng Thái</th>
+            <td>Đã giao hàng</td>
+          </tr>
+        </table>
+        <span class="main__label">Tổng cộng: 1 sản phẩm</span>
+        <table class="main-table" width="100%">
+          <tr>
+            <th colspan="3">Sản Phẩm</th>
+            <th>Giá</th>
+            <th>Số Lượng</th>
+            <th>Thành Tiền</th>
+          </tr>
+          <tr class="main-table__row">
+            <td>1</td>
+            <td><img class="main-table__img" src="../../assets/img/product_banana.png" alt="img" /></td>
+            <td>Banana</td>
+            <td>20.000 VNĐ</td>
+            <td>1</td>
+            <td>20.000 VNĐ</td>
+          </tr>
+          <tr>
+            <td class="main-table__total" colspan="5">Tổng cộng</td>
+            <th>20.000 VNĐ</th>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="../../assets/js/admin/order.js"></script>
+  </body>
+</html>

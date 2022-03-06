@@ -1,50 +1,47 @@
 /*==============================VARIABLES==============================*/
 /*-------------Header-------------*/
-const header = document.querySelector(".header"),
-  cart = document.querySelector(".header-cart"),
-  cartIcon = document.querySelector(".header__icon.cart"),
-  cartWrapper = document.querySelector(".header-cart__wrapper"),
-  cartHeader = document.querySelector(".header-cart__header"),
-  cartBottom = document.querySelector(".header-cart__bottom"),
-  amountLabel = document.querySelector(".header-cart__amount"),
-  totalLabel = document.querySelector(".header-cart__total"),
-  cartList = document.querySelector(".header-cart__list");
+const header = document.querySelector('.header'),
+  cart = document.querySelector('.header-cart'),
+  cartIcon = document.querySelector('.header__icon.cart'),
+  cartWrapper = document.querySelector('.header-cart__wrapper'),
+  cartHeader = document.querySelector('.header-cart__header'),
+  cartBottom = document.querySelector('.header-cart__bottom'),
+  amountLabel = document.querySelector('.header-cart__amount'),
+  totalLabel = document.querySelector('.header-cart__total'),
+  cartList = document.querySelector('.header-cart__list');
 /*-------------Scroll Btn-------------*/
-const scrollBtn = document.querySelector(".scroll-btn");
+const scrollBtn = document.querySelector('.scroll-btn');
 /*==============================EVENT LISTENERS & FUNCTIONS==============================*/
 /*-------------Toggle Cart Wrapper-------------*/
 cart.onclick = e => {
   e.stopPropagation();
 };
 cartIcon.onclick = e => {
-  cartWrapper.classList.toggle("show");
+  cartWrapper.classList.toggle('show');
 };
-window.onclick = () => {
-  cartWrapper.classList.remove("show");
-};
+
 /*-------------Toggle Scroll Btn When Scroll Page-------------*/
 document.onscroll = () => {
-  window.scrollY >= 500
-    ? scrollBtn.classList.remove("appear")
-    : scrollBtn.classList.add("appear");
+  window.scrollY >= 500 ? scrollBtn.classList.remove('appear') : scrollBtn.classList.add('appear');
 };
+
+scrollBtn.addEventListener('click', () => {
+  document.body.scrollTop;
+});
 /*-------------Handle Quantity Items-------------*/
 function handleQuantityItems(index, isIncrease) {
-  const products = JSON.parse(localStorage.getItem("products"));
+  const products = JSON.parse(localStorage.getItem('products'));
   if (products) {
     if (!isIncrease) {
       if (products[index].quantity == 1) {
-        const isDel = confirm(
-          "Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không?"
-        );
+        const isDel = confirm('Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không?');
         if (!isDel) {
           return;
         } else {
           products.splice(index, 1);
         }
       } else {
-        products[index].price -=
-          products[index].price / products[index].quantity;
+        products[index].price -= products[index].price / products[index].quantity;
         products[index].quantity--;
       }
     } else {
@@ -55,17 +52,17 @@ function handleQuantityItems(index, isIncrease) {
       setEmptyCart(cartList);
       handleEmptyCart();
       setQuantityCart(products, cart);
-      localStorage.removeItem("products");
+      localStorage.removeItem('products');
     } else {
-      localStorage.setItem("products", JSON.stringify(products));
+      localStorage.setItem('products', JSON.stringify(products));
       getHtml(products);
       setData(products);
     }
   }
 }
 /*-------------Load Data From Local Storage to Cart-------------*/
-window.addEventListener("load", () => {
-  const products = JSON.parse(localStorage.getItem("products"));
+window.addEventListener('load', () => {
+  const products = JSON.parse(localStorage.getItem('products'));
   if (products != null && products.length != 0) {
     handleHasCartItem(products);
     getHtml(products);
@@ -76,13 +73,11 @@ window.addEventListener("load", () => {
   }
 });
 function getHtml(products) {
-  cartList.innerHTML = "";
+  cartList.innerHTML = '';
   products.forEach((product, index) => {
     cartList.innerHTML += `
       <li class="header-cart__item flex" data-price="${product.price}">
-        <input class="header-cart__item-id" name="product-id" type="hidden" value="${
-          product.id
-        }">
+        <input class="header-cart__item-id" name="product-id" type="hidden" value="${product.id}">
         <div class="header-cart__left">
           <a href="./detail.php?id=${product.id}" class="img-link">
             <img
@@ -107,9 +102,9 @@ function getHtml(products) {
               <ion-icon name="add-outline"></ion-icon>
             </button>
             <span class="header-cart__number header-cart__price"
-              >${product.price.toLocaleString("it-IT", {
-                style: "currency",
-                currency: "VND",
+              >${product.price.toLocaleString('it-IT', {
+                style: 'currency',
+                currency: 'VND',
               })}</span
             >
           </div>
@@ -154,9 +149,9 @@ function setTotalPrice(products, totalLabel) {
   products.forEach(product => {
     price += product.price;
   });
-  totalLabel.innerText = price.toLocaleString("it-IT", {
-    style: "currency",
-    currency: "VND",
+  totalLabel.innerText = price.toLocaleString('it-IT', {
+    style: 'currency',
+    currency: 'VND',
   });
 }
 function setData(products) {
